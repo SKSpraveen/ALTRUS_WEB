@@ -20,7 +20,7 @@ const conferenceDetails = {
     },
     {
       icon: Trophy,
-      title: "H5-Index of 22",
+      title: "H5-Index of 36",
       content: "Published in the ICHORA 2026 Conference Proceedings by IEEE, (IEEE Xplore, and indexed by Ei Compendex, Scopus).",
       borderColor: "from-primary/80 to-primary",
     },
@@ -43,7 +43,7 @@ const conferenceDetails = {
 const achievements = [
   {
     icon: Award,
-    title: "Competitive Recognition",
+    title: "Research Competitions",
     event: "Multiple Award Submissions",
     description: "Submitted applications to SLASSCOM Ingenuity Awards 2026 and World Summit Awards Global Congress 2026, showcasing ALTRUS as a transformative solution in assistive robotics.",
   },
@@ -137,19 +137,6 @@ export function Achievements() {
               })}
             </div>
           </div>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="p-6 rounded-xl bg-card border border-border text-center hover:border-primary/50 transition-colors"
-            >
-              <p className="text-3xl sm:text-4xl font-bold text-primary mb-1">{stat.value}</p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
         </div>
 
         {/* Other Achievement Cards */}

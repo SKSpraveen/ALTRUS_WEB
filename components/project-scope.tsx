@@ -101,7 +101,7 @@ const methodologies = [
       "Usability: Intuitive voice and gesture interface",
     ],
     tools: ["ROS2 (Humble)", "SLAM Toolbox", "Nav2", "Python", "C++", "Gazebo + RViz2", "Behavior Trees"],
-    hardware: ["Raspberry Pi 5", "RPLidar A1", "Motor Controller", "Wheels & Motors", "Power System"],
+    hardware: ["Mini PC", "RPLidar A1", "Motor Controller", "Wheels & Motors", "Power System"],
   },
   {
     icon: Heart,

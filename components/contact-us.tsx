@@ -13,19 +13,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "research@university.edu",
+    value: "altrus.offcial@gmail.com",
     href: "mailto:research@university.edu",
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+94 76 527 7645",
+    href: "tel:+94765277645",
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "Research Building, Room 302",
+    value: "Sliit, Malabe, Sri Lanka",
     href: "#",
   },
 ]

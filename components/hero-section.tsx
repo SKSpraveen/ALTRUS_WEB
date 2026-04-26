@@ -20,51 +20,53 @@ export function HeroSection() {
           {/* Content Section */}
           <div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
               <span className="glow-text">A.L.T.R.U.S</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-foreground mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
               Adaptive Life-support & Therapeutic Robotic Unit System
             </p>
 
-            <p className="mx-auto max-w-3xl text-lg sm:text-xl text-muted-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 leading-relaxed">
+            <p className="mx-auto max-w-3xl text-xl sm:text-xl text-muted-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 leading-relaxed">
               Inspired by Baymax & Wall-E — We&apos;re not just building another robot. We&apos;re creating{" "}
               <span className="text-primary font-semibold">four powerful, reusable software frameworks</span> that form the
               backbone of intelligent assistive robots for healthcare, rehabilitation, and daily living.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-base hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
                 <Sparkles className="h-4 w-4 text-primary group-hover:animate-glow-pulse" />
                 <span className="text-muted-foreground group-hover:text-primary transition-colors">Emotion-Aware Interaction</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-base hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
                 <Cog className="h-4 w-4 text-primary group-hover:animate-subtle-spin" />
                 <span className="text-muted-foreground group-hover:text-primary transition-colors">Autonomous Navigation</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-base hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
                 <Heart className="h-4 w-4 text-primary group-hover:animate-glow-pulse" />
                 <span className="text-muted-foreground group-hover:text-primary transition-colors">Health Monitoring</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-sm hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-base hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
                 <Bot className="h-4 w-4 text-primary group-hover:animate-subtle-spin" />
                 <span className="text-muted-foreground group-hover:text-primary transition-colors">Fault-Tolerant Middleware</span>
               </div>
             </div>
 
             {/* Robot Image Section */}
-          <div className="relative w-full max-w-lg mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-            <div className="relative w-full aspect-square animate-float group">
-              {/* Glowing background effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/0 blur-3xl rounded-full animate-pulse" />
-              <Image
-                src="/robot.png"
-                alt="A.L.T.R.U.S Healthcare Robot"
-                fill
-                className="object-contain drop-shadow-2xl relative z-10 group-hover:drop-shadow-[0_0_30px_rgba(var(--primary-rgb),0.4)] transition-all duration-300"
-                priority
-              />
+          <div className="flex justify-center mb-8">
+            <div className="relative w-80 h-80 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
+              <div className="relative w-full h-full animate-float group border border-primary/30 rounded-full p-4 hover:border-primary/60 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 bg-secondary/30 backdrop-blur-sm overflow-hidden">
+                {/* Glowing background effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/0 blur-3xl rounded-full animate-pulse" />
+                <Image
+                  src="/robot.png"
+                  alt="A.L.T.R.U.S Healthcare Robot"
+                  fill
+                  className="object-contain drop-shadow-2xl relative z-10 group-hover:drop-shadow-[0_0_30px_rgba(var(--primary-rgb),0.4)] transition-all duration-300"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
