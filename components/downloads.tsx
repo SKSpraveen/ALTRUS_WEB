@@ -32,6 +32,13 @@ const documents = [
     category: "Presentations",
     items: [
       {
+        name: "Proposal Presentation",
+        icon: Presentation,
+        subItems: [
+          { name: "Proposal Presentation", type: "PPTX", link: "https://drive.google.com/..." },
+        ],
+      },
+      {
         name: "Progress Presentation 1",
         icon: Presentation,
         subItems: [
@@ -55,13 +62,20 @@ const documents = [
     ],
   },
   {
-    category: "Research",
+    category: "Research Paper",
     items: [
       {
         name: "Research Paper",
         icon: BookOpen,
         subItems: [
           { name: "Research Paper", type: "PDF", link: "https://drive.google.com/..." },
+        ],
+      },
+      {
+        name: "Acceptance Notification",
+        icon: FileText,
+        subItems: [
+          { name: "Acceptance Notification", type: "PDF", link: "https://drive.google.com/..." },
         ],
       },
     ],
@@ -89,21 +103,22 @@ export function Downloads() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {documents.map((category, catIdx) => (
-            <Card
-              key={category.category}
-              className="bg-card border-border hover:border-primary/50 transition-all duration-300 card-hover animate-slide-in-up"
-              style={{ animationDelay: `${catIdx * 150}ms` }}
-            >
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl">
+            {documents.map((category, catIdx) => (
+              <div key={category.category} className={catIdx === 2 ? "sm:col-span-2 flex justify-center" : ""}>
+                <Card
+                  className="bg-card border-border hover:border-primary/50 transition-all duration-300 card-hover animate-slide-in-up w-full sm:max-w-2xl h-full flex flex-col min-h-96"
+                  style={{ animationDelay: `${catIdx * 150}ms` }}
+                >
               <CardHeader>
-                <CardTitle className="text-xl text-card-foreground">{category.category}</CardTitle>
+                <CardTitle className="text-xl text-primary">{category.category}</CardTitle>
                 <CardDescription className="text-muted-foreground">
                   {category.items.length} document group{category.items.length !== 1 ? "s" : ""}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
+              <CardContent className="flex-1 flex flex-col">
+                <div className="space-y-3 flex-1">
                   {category.items.map((item, idx) => {
                     const itemKey = `${category.category}-${idx}`
                     const isExpanded = expandedItems.includes(itemKey)
@@ -165,7 +180,9 @@ export function Downloads() {
                 </div>
               </CardContent>
             </Card>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

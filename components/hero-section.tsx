@@ -24,7 +24,7 @@ export function HeroSection() {
               <span className="glow-text">A.L.T.R.U.S</span>
             </h1>
 
-            <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-primary mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
               Adaptive Life-support & Therapeutic Robotic Unit System
             </p>
 
@@ -60,7 +60,7 @@ export function HeroSection() {
                 {/* Glowing background effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/0 blur-3xl rounded-full animate-pulse" />
                 <Image
-                  src="/robot.png"
+                  src="/al.png"
                   alt="A.L.T.R.U.S Healthcare Robot"
                   fill
                   className="object-contain drop-shadow-2xl relative z-10 group-hover:drop-shadow-[0_0_30px_rgba(var(--primary-rgb),0.4)] transition-all duration-300"

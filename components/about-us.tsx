@@ -10,30 +10,40 @@ const teamMembers = [
     role: "Supervisor",
     bio: "Project supervisor providing expert guidance and oversight for the ALTRUS robotic system development.",
     image: "/hansi.jpg",
+    email: "hansi.d@sliit.lk",
+    linkedin: "https://lk.linkedin.com/in/hansi-de-silva-03629b79",
   },
   {
     name: "Mr. Ashvinda Iddamalgoda",
     role: "Co-Supervisor",
     bio: "Co-supervisor contributing specialized knowledge in robotics and system engineering.",
     image: "/ashvinda.jpeg",
+    email: "ashvinda.i@sliit.lk",
+    linkedin: "https://lk.linkedin.com/in/ashvinda",
   },
   {
     name: "Praveen S.K.S",
     role: "Group Leader",
-    bio: "Leading the research team in developing adaptive life-support robotic solutions.",
+    bio: "Leading the research team in designing and implementing therapeutic robotic functionalities while overseeing hardware integration and robust system architecture development for adaptive life-support solutions.",
     image: "/sasindupraveen.png",
+    email: "sasindupraveen705@gmail.com",
+    linkedin: "http://linkedin.com/in/SKSpraveen",
   },
   {
     name: "S.N.S.B.K.K. Semasinghe",
     role: "Team Member",
-    bio: "Contributing to the design and implementation of therapeutic robotic functionalities.",
+    bio: "Focused on hardware integration and robotic system architecture development.",
     image: "/kk.jpg",
+    email: "kushankasemasinghe2002@gmail.com",
+    linkedin: "linkdin.com/kushankasemasinghe",
   },
   {
     name: "Madushanka L.A.S",
     role: "Team Member",
-    bio: "Focused on hardware integration and robotic system architecture development.",
+    bio: "Contributing to the design and implementation of therapeutic robotic functionalities.",
     image: "/supun.jpg",
+    email: "Supunmadushanka2582000@gmail.com",
+    linkedin: "linkdin.com/supunmadushan",
   },
 ]
 
@@ -57,7 +67,7 @@ export function AboutUs() {
         {/* Supervisors Row */}
         <div className="flex justify-center gap-6 mb-6">
           {supervisors.map((member, idx) => (
-            <div key={member.name} className="w-full max-w-md">
+            <div key={member.name} className="w-80">
               <Card
                 className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
                 style={{ animationDelay: `${idx * 100}ms` }}
@@ -73,14 +83,18 @@ export function AboutUs() {
                   </div>
                   <h3 className="text-lg font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
                   <p className="text-sm text-primary font-medium mb-3 group-hover:text-primary/80 transition-colors">{member.role}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300">{member.bio}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300 text-justify">{member.bio}</p>
                   <div className="flex gap-2">
-                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                      <Mail className="h-4 w-4" />
-                    </Button>
-                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                      <Linkedin className="h-4 w-4" />
-                    </Button>
+                    <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </a>
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                      <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                        <Linkedin className="h-4 w-4" />
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -107,14 +121,18 @@ export function AboutUs() {
                 </div>
                 <h3 className="text-lg font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
                 <p className="text-sm text-primary font-medium mb-3 group-hover:text-primary/80 transition-colors">{member.role}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300">{member.bio}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300 text-justify">{member.bio}</p>
                 <div className="flex gap-2">
-                  <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                    <Mail className="h-4 w-4" />
-                  </Button>
-                  <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                    <Linkedin className="h-4 w-4" />
-                  </Button>
+                  <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                      <Mail className="h-4 w-4" />
+                    </Button>
+                  </a>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                      <Linkedin className="h-4 w-4" />
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -136,14 +154,18 @@ export function AboutUs() {
                 </div>
                 <h3 className="text-lg font-semibold text-card-foreground mb-1 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
                 <p className="text-sm text-primary font-medium mb-3 group-hover:text-primary/80 transition-colors">{member.role}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300">{member.bio}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 group-hover:text-foreground transition-colors duration-300 text-justify">{member.bio}</p>
                 <div className="flex gap-2">
-                  <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                    <Mail className="h-4 w-4" />
-                  </Button>
-                  <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                    <Linkedin className="h-4 w-4" />
-                  </Button>
+                  <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                      <Mail className="h-4 w-4" />
+                    </Button>
+                  </a>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                    <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                      <Linkedin className="h-4 w-4" />
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
