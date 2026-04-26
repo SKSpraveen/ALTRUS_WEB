@@ -62,6 +62,46 @@ const documents = [
     ],
   },
   {
+    category: "Final Report",
+    items: [
+      {
+        name: "Report 1",
+        icon: FileText,
+        subItems: [
+          { name: "Report 1", type: "PDF", link: "https://drive.google.com/..." },
+        ],
+      },
+      {
+        name: "Report 2",
+        icon: FileText,
+        subItems: [
+          { name: "Report 2", type: "PDF", link: "https://drive.google.com/..." },
+        ],
+      },
+      {
+        name: "Report 3",
+        icon: FileText,
+        subItems: [
+          { name: "Report 3", type: "PDF", link: "https://drive.google.com/..." },
+        ],
+      },
+      {
+        name: "Report 4",
+        icon: FileText,
+        subItems: [
+          { name: "Report 4", type: "PDF", link: "https://drive.google.com/..." },
+        ],
+      },
+      {
+        name: "Final Thesis",
+        icon: BookOpen,
+        subItems: [
+          { name: "Final Thesis", type: "PDF", link: "https://drive.google.com/..." },
+        ],
+      },
+    ],
+  },
+  {
     category: "Research Paper",
     items: [
       {
@@ -106,7 +146,7 @@ export function Downloads() {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl">
             {documents.map((category, catIdx) => (
-              <div key={category.category} className={catIdx === 2 ? "sm:col-span-2 flex justify-center" : ""}>
+              <div key={category.category}>
                 <Card
                   className="bg-card border-border hover:border-primary/50 transition-all duration-300 card-hover animate-slide-in-up w-full sm:max-w-2xl h-full flex flex-col min-h-96"
                   style={{ animationDelay: `${catIdx * 150}ms` }}
