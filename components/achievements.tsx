@@ -7,6 +7,7 @@ const conferenceDetails = {
   badge: "Research Paper Accepted",
   title: "International Conference Acceptance",
   subtitle: "Our research has been accepted for presentation at ICHORA 2026",
+  highlightText: "ICHORA 2026",
   paperDetails: {
     id: "#####",
     title: "ALTRUS – Adaptive Life-support and Therapeutic Robotic Unit System",
@@ -46,6 +47,7 @@ const achievements = [
     title: "Research Competitions",
     event: "Multiple Award Submissions",
     description: "Submitted applications to SLASSCOM Ingenuity Awards 2026 and World Summit Awards Global Congress 2026, showcasing ALTRUS as a transformative solution in assistive robotics.",
+    highlight: "SLASSCOM Ingenuity Awards 2026",
   },
   {
     icon: Zap,
@@ -89,8 +91,21 @@ export function Achievements() {
               <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 {conferenceDetails.title}
               </h3>
-              <p className="text-muted-foreground text-lg">
-                {conferenceDetails.subtitle}
+              <p className="text-lg">
+                {conferenceDetails.highlightText ? (
+                  <>
+                    {conferenceDetails.subtitle.split(conferenceDetails.highlightText).map((part, idx) => (
+                      <span key={idx}>
+                        <span className="text-muted-foreground">{part}</span>
+                        {idx < conferenceDetails.subtitle.split(conferenceDetails.highlightText).length - 1 && (
+                          <span className="text-primary font-semibold">{conferenceDetails.highlightText}</span>
+                        )}
+                      </span>
+                    ))}
+                  </>
+                ) : (
+                  <span className="text-muted-foreground">{conferenceDetails.subtitle}</span>
+                )}
               </p>
             </div>
 
@@ -154,7 +169,22 @@ export function Achievements() {
                   <div>
                     <h3 className="text-lg font-semibold text-card-foreground mb-1">{achievement.title}</h3>
                     <p className="text-sm text-primary font-medium mb-2">{achievement.event}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{achievement.description}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed text-justify">
+                      {achievement.highlight ? (
+                        <>
+                          {achievement.description.split(achievement.highlight).map((part, idx) => (
+                            <span key={idx}>
+                              {part}
+                              {idx < achievement.description.split(achievement.highlight).length - 1 && (
+                                <span className="text-primary font-semibold">{achievement.highlight}</span>
+                              )}
+                            </span>
+                          ))}
+                        </>
+                      ) : (
+                        achievement.description
+                      )}
+                    </p>
                   </div>
                 </div>
               </CardContent>

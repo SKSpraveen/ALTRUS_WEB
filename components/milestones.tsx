@@ -41,6 +41,13 @@ const milestones = [
   },
   {
     date: "April 2026",
+    title: "Research Paper Accepted",
+    description: "Our research has been accepted for presentation at ICHORA 2026",
+    status: "completed",
+    highlight: "ICHORA 2026",
+  },
+  {
+    date: "April 2026",
     title: "Completion of Full System",
     description: "Final system integration, testing, and optimization phase.",
     status: "completed",
@@ -102,7 +109,22 @@ export function Milestones() {
                       {milestone.date}
                     </span>
                     <h3 className="text-lg font-semibold text-card-foreground mb-2">{milestone.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{milestone.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {milestone.highlight ? (
+                        <>
+                          {milestone.description.split(milestone.highlight).map((part, idx) => (
+                            <span key={idx}>
+                              {part}
+                              {idx < milestone.description.split(milestone.highlight).length - 1 && (
+                                <span className="text-primary font-semibold">{milestone.highlight}</span>
+                              )}
+                            </span>
+                          ))}
+                        </>
+                      ) : (
+                        milestone.description
+                      )}
+                    </p>
                   </div>
                 </div>
 
