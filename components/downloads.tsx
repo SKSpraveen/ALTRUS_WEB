@@ -13,17 +13,17 @@ const documents = [
         name: "Project Proposal",
         icon: FileText,
         subItems: [
-          { name: "Report 1", type: "PDF", link: "https://drive.google.com/..." },
-          { name: "Report 2", type: "PDF", link: "https://drive.google.com/..." },
-          { name: "Report 3", type: "PDF", link: "https://drive.google.com/..." },
-          { name: "Report 4", type: "PDF", link: "https://drive.google.com/..." },
+          { name: "Report 1", type: "PDF", link: "/documents/proposals/IT22114044_Project Proposal.pdf" },
+          { name: "Report 2", type: "PDF", link: "/documents/proposals/IT22084668_Project Proposal.pdf" },
+          { name: "Report 3", type: "PDF", link: "/documents/proposals/IT22602114.pdf" },
+          { name: "Report 4", type: "PDF", link: "/documents/proposals/IT22092274_Project Proposal.pdf" },
         ],
       },
       {
         name: "Topic Assessment",
         icon: FileText,
         subItems: [
-          { name: "TAF Report", type: "PDF", link: "https://drive.google.com/..." },
+          { name: "TAF Report", type: "PDF", link: "/documents/proposals/TAF-Report.pdf" },
         ],
       },
     ],
@@ -35,28 +35,28 @@ const documents = [
         name: "Proposal Presentation",
         icon: Presentation,
         subItems: [
-          { name: "Proposal Presentation", type: "PPTX", link: "https://drive.google.com/..." },
+          { name: "Proposal Presentation", type: "PPTX", link: "/documents/presentations/ProposalPresentation.pptx" },
         ],
       },
       {
         name: "Progress Presentation 1",
         icon: Presentation,
         subItems: [
-          { name: "PP1 Presentation", type: "PPTX", link: "https://drive.google.com/..." },
+          { name: "PP1 Presentation", type: "PPTX", link: "/documents/presentations/PP1.pptx" },
         ],
       },
       {
         name: "Progress Presentation 2",
         icon: Presentation,
         subItems: [
-          { name: "PP2 Presentation", type: "PPTX", link: "https://drive.google.com/..." },
+          { name: "PP2 Presentation", type: "PPTX", link: "/documents/presentations/PP2.pptx" },
         ],
       },
       {
         name: "Final Presentation",
         icon: Presentation,
         subItems: [
-          { name: "Final Presentation", type: "PPTX", link: "https://drive.google.com/..." },
+          { name: "Final Presentation", type: "PPTX", link: "/documents/presentations/FinalPresentation.pptx" },
         ],
       },
     ],
@@ -65,38 +65,19 @@ const documents = [
     category: "Final Report",
     items: [
       {
-        name: "Report 1",
+        name: "Individual Reports",
         icon: FileText,
         subItems: [
-          { name: "Report 1", type: "PDF", link: "https://drive.google.com/..." },
-        ],
-      },
-      {
-        name: "Report 2",
-        icon: FileText,
-        subItems: [
-          { name: "Report 2", type: "PDF", link: "https://drive.google.com/..." },
-        ],
-      },
-      {
-        name: "Report 3",
-        icon: FileText,
-        subItems: [
-          { name: "Report 3", type: "PDF", link: "https://drive.google.com/..." },
-        ],
-      },
-      {
-        name: "Report 4",
-        icon: FileText,
-        subItems: [
-          { name: "Report 4", type: "PDF", link: "https://drive.google.com/..." },
+          { name: "Report 1", type: "PDF", link: "/documents/final/IT22114044_Final Report.pdf" },
+          { name: "Report 2", type: "PDF", link: "/documents/final/IT22084668_final Report.pdf" },
+          { name: "Report 3", type: "PDF", link: "/documents/final/IT22602114_Final Report.pdf" },
         ],
       },
       {
         name: "Final Thesis",
         icon: BookOpen,
         subItems: [
-          { name: "Final Thesis", type: "PDF", link: "https://drive.google.com/..." },
+          { name: "Final Thesis", type: "PDF", link: "/documents/final/ALTRUS_Final Report.pdf" },
         ],
       },
     ],
@@ -108,14 +89,14 @@ const documents = [
         name: "Research Paper",
         icon: BookOpen,
         subItems: [
-          { name: "Research Paper", type: "PDF", link: "https://drive.google.com/..." },
+          { name: "Research Paper", type: "PDF", link: "/documents/research/Altrus_research paper.pdf" },
         ],
       },
       {
         name: "Acceptance Notification",
         icon: FileText,
         subItems: [
-          { name: "Acceptance Notification", type: "PDF", link: "https://drive.google.com/..." },
+          { name: "Acceptance Notification", type: "PDF", link: "/documents/research/Acceptance_Letter_ICHORA2026_ID_417.pdf" },
         ],
       },
     ],
