@@ -68,9 +68,9 @@ const documents = [
         name: "Individual Reports",
         icon: FileText,
         subItems: [
-          { name: "Report 1", type: "PDF", link: "/documents/final/IT22114044_Final Report.pdf" },
-          { name: "Report 2", type: "PDF", link: "/documents/final/IT22084668_final Report.pdf" },
-          { name: "Report 3", type: "PDF", link: "/documents/final/IT22602114_Final Report.pdf" },
+          { name: "Report 1", type: "PDF", link: "/documents/final/IT22114044_Final_Report.pdf" },
+          { name: "Report 2", type: "PDF", link: "/documents/final/IT22084668_final_Report.pdf" },
+          { name: "Report 3", type: "PDF", link: "/documents/final/IT22602114_Final_Report.pdf" },
         ],
       },
       {
