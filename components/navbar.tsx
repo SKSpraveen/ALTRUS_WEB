@@ -76,7 +76,7 @@ export function Navbar() {
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
                 className={cn(
-                  "relative px-1 py-2 text-sm font-medium transition-all duration-300",
+                  "relative px-2 py-2 text-sm font-medium transition-all duration-300 group",
                   activeSection === link.href.replace("#", "")
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground",
@@ -84,8 +84,9 @@ export function Navbar() {
               >
                 {link.name}
                 {activeSection === link.href.replace("#", "") && (
-                  <span className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-primary/0 w-full animate-line-expand" />
+                  <span className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-primary/0 w-full animate-line-expand shadow-lg shadow-primary/50" />
                 )}
+                <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
               </button>
             ))}
           </div>

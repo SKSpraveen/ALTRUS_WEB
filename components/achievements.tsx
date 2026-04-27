@@ -122,15 +122,16 @@ export function Achievements() {
 
             {/* Info Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {conferenceDetails.cards.map((card) => {
+              {conferenceDetails.cards.map((card, idx) => {
                 const Icon = card.icon
                 return (
                   <div
                     key={card.title}
-                    className="rounded-lg border border-border bg-background p-6 hover:border-primary/50 transition-colors duration-300"
+                    className="rounded-lg border border-border bg-background p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4"
+                    style={{ animationDelay: `${idx * 100}ms` }}
                   >
                     <div className="flex items-start gap-3 mb-4">
-                      <Icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <Icon className="h-6 w-6 text-primary flex-shrink-0 mt-1 group-hover:animate-mechanical-rotate transition-all" />
                       <h4 className="font-semibold text-foreground">{card.title}</h4>
                     </div>
                     {card.link ? (
@@ -138,7 +139,7 @@ export function Achievements() {
                         href={card.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-primary hover:underline"
+                        className="text-sm text-primary hover:underline hover:text-primary/80 transition-colors"
                       >
                         {card.content}
                       </a>

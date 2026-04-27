@@ -129,7 +129,7 @@ export function Downloads() {
             {documents.map((category, catIdx) => (
               <div key={category.category}>
                 <Card
-                  className="bg-card border-border hover:border-primary/50 transition-all duration-300 card-hover animate-slide-in-up w-full sm:max-w-2xl h-full flex flex-col min-h-96"
+                  className="bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 card-hover animate-slide-in-up w-full sm:max-w-2xl h-full flex flex-col min-h-96"
                   style={{ animationDelay: `${catIdx * 150}ms` }}
                 >
               <CardHeader>

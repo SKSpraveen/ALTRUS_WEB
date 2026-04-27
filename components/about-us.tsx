@@ -69,7 +69,7 @@ export function AboutUs() {
           {supervisors.map((member, idx) => (
             <div key={member.name} className="w-80">
               <Card
-                className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
+                className="bg-card border border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <CardContent className="p-6">
@@ -107,7 +107,7 @@ export function AboutUs() {
           {leader.map((member, idx) => (
             <Card
               key={member.name}
-              className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
+              className="bg-card border border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               <CardContent className="p-6">
@@ -140,7 +140,7 @@ export function AboutUs() {
           {teamMembersOnly.map((member, idx) => (
             <Card
               key={member.name}
-              className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
+              className="bg-card border border-border/50 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group overflow-hidden card-hover animate-slide-in-up"
               style={{ animationDelay: `${(supervisors.length + idx) * 100}ms` }}
             >
               <CardContent className="p-6">

@@ -87,7 +87,7 @@ export function Milestones() {
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 md:-translate-x-px animate-pulse" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20 md:-translate-x-px animate-pulse shadow-lg shadow-primary/30" />
 
           <div className="space-y-8">
             {milestones.map((milestone, index) => (

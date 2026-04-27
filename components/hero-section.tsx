@@ -21,7 +21,7 @@ export function HeroSection() {
           <div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
-              <span className="glow-text">A.L.T.R.U.S</span>
+              <span className="glow-text animate-glow-text">A.L.T.R.U.S</span>
             </h1>
 
             <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-primary mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">

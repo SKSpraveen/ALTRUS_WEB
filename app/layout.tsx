@@ -1,11 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Geist_Mono } from "next/font/google"
+import { Inter, Space_Mono, IBM_Plex_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const _inter = Inter({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const spaceMono = Space_Mono({ weight: ["400", "700"], subsets: ["latin"] })
+const ibmPlexMono = IBM_Plex_Mono({ weight: ["400", "500", "700"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "ALTRUS | Adaptive Life-support & Therapeutic Robotic Unit System",
@@ -37,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${ibmPlexMono.className} font-mono antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
       </body>
