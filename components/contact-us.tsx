@@ -2,12 +2,29 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { useState, useEffect } from "react"
+import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react"
+import emailjs from "@emailjs/browser"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+
+// Initialize EmailJS - Replace with your Public Key
+const EMAILJS_PUBLIC_KEY: string = "r8YKfxM3LQsTbBwXj"
+const EMAILJS_SERVICE_ID: string = "service_5ny9unr"
+const EMAILJS_TEMPLATE_ID: string = "template_y1cms3n"
+
+// Validate credentials
+const isConfigured =
+  EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY_HERE" &&
+  EMAILJS_SERVICE_ID && EMAILJS_SERVICE_ID !== "YOUR_SERVICE_ID_HERE" &&
+  EMAILJS_TEMPLATE_ID && EMAILJS_TEMPLATE_ID !== "YOUR_TEMPLATE_ID_HERE"
+
+// Initialize on mount
+if (typeof window !== "undefined" && isConfigured) {
+  emailjs.init(EMAILJS_PUBLIC_KEY)
+}
 
 const contactInfo = [
   {
@@ -37,11 +54,63 @@ export function ContactUs() {
     subject: "",
     message: "",
   })
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
+  const [statusMessage, setStatusMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+    
+    // Validate credentials
+    if (!isConfigured) {
+      setStatus("error")
+      setStatusMessage("EmailJS is not configured. Please set your credentials in contact-us.tsx")
+      console.error("EmailJS Configuration Missing")
+      return
+    }
+
+    // Validate form
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatus("error")
+      setStatusMessage("Please fill in all fields.")
+      return
+    }
+
+    setLoading(true)
+    setStatus("idle")
+
+    try {
+      const result = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        email: formData.email,
+        name: formData.name,
+        title: formData.subject,
+        message: formData.message,
+      })
+
+      if (result.status === 200) {
+        setStatus("success")
+        setStatusMessage("Message sent successfully! We'll get back to you soon.")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+        setTimeout(() => setStatus("idle"), 5000)
+      }
+    } catch (error: any) {
+      setStatus("error")
+      console.error("EmailJS error details:", error)
+      
+      // Better error messages
+      if (error.status === 401) {
+        setStatusMessage("Authentication failed. Check your EmailJS Public Key.")
+      } else if (error.status === 404) {
+        setStatusMessage("Service or Template not found. Check your Service ID and Template ID.")
+      } else if (error.text === "Service not allowed") {
+        setStatusMessage("Email service not verified. Please verify in EmailJS dashboard.")
+      } else {
+        setStatusMessage(`Error: ${error.text || "Failed to send message. Please try again."}`)
+      }
+      setTimeout(() => setStatus("idle"), 5000)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -83,6 +152,24 @@ export function ContactUs() {
           <div className="lg:col-span-2 animate-slide-in-up" style={{ animationDelay: "200ms" }}>
             <Card className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 card-hover">
               <CardContent className="p-6 sm:p-8">
+                {/* Status Message */}
+                {status !== "idle" && (
+                  <div
+                    className={`mb-6 p-4 rounded-lg flex items-center gap-3 animate-in fade-in slide-in-from-top ${
+                      status === "success"
+                        ? "bg-green-500/10 border border-green-500/30 text-green-700"
+                        : "bg-red-500/10 border border-red-500/30 text-red-700"
+                    }`}
+                  >
+                    {status === "success" ? (
+                      <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                    ) : (
+                      <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                    )}
+                    <p className="text-sm">{statusMessage}</p>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2 group">
@@ -138,10 +225,11 @@ export function ContactUs() {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 group"
+                    disabled={loading}
+                    className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <Send className="h-4 w-4 mr-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
