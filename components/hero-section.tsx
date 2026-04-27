@@ -60,7 +60,7 @@ export function HeroSection() {
                 {/* Glowing background effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/0 blur-3xl rounded-full animate-pulse" />
                 <Image
-                  src="/al.png"
+                  src="/logoo.png"
                   alt="A.L.T.R.U.S Healthcare Robot"
                   fill
                   className="object-contain drop-shadow-2xl relative z-10 group-hover:drop-shadow-[0_0_30px_rgba(var(--primary-rgb),0.4)] transition-all duration-300"
