@@ -88,7 +88,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-primary/40 hover:bg-secondary bg-transparent hover:border-primary/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-105"
+              className="border-primary/40 hover:bg-primary/20 bg-transparent hover:border-primary/80 text-foreground hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-105"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Get In Touch
