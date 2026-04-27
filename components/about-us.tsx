@@ -25,7 +25,7 @@ const teamMembers = [
     name: "Praveen S.K.S",
     role: "Group Leader",
     bio: "Leading the research team in designing and implementing therapeutic robotic functionalities while overseeing hardware integration and robust system architecture development for adaptive life-support solutions.",
-    image: "/sasindupraveen.png",
+    image: "/ss.png",
     email: "sasindupraveen705@gmail.com",
     linkedin: "http://linkedin.com/in/SKSpraveen",
   },
