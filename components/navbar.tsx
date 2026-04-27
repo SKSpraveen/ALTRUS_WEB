@@ -104,18 +104,19 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-in fade-in slide-in-from-top-2">
-            <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/10 animate-in fade-in slide-in-from-top-2">
+            <div className="flex flex-col gap-0 p-4 max-w-7xl mx-auto">
+              {navLinks.map((link, idx) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
                   className={cn(
-                    "px-4 py-3 text-sm font-medium rounded-md transition-colors text-left",
+                    "px-4 py-3 text-sm font-medium rounded-md transition-all duration-200 text-left hover:scale-105 hover:translate-x-1",
                     activeSection === link.href.replace("#", "")
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary",
+                      ? "text-primary bg-primary/15 border-l-2 border-primary font-semibold"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
                   )}
+                  style={{ animationDelay: `${idx * 50}ms` }}
                 >
                   {link.name}
                 </button>
