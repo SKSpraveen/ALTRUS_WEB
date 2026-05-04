@@ -13,10 +13,10 @@ const documents = [
         name: "Project Proposal",
         icon: FileText,
         subItems: [
-          { name: "Report 1", type: "PDF", link: "/documents/proposals/IT22114044_Project Proposal.pdf" },
-          { name: "Report 2", type: "PDF", link: "/documents/proposals/IT22084668_Project Proposal.pdf" },
-          { name: "Report 3", type: "PDF", link: "/documents/proposals/IT22602114.pdf" },
-          { name: "Report 4", type: "PDF", link: "/documents/proposals/IT22092274_Project Proposal.pdf" },
+          { name: "Smart Navigation - IT22114044", type: "PDF", link: "/documents/proposals/IT22114044_Project Proposal.pdf" },
+          { name: "IOT Firmware - IT22084668", type: "PDF", link: "/documents/proposals/IT22084668_Project Proposal.pdf" },
+          { name: "Emotion Framework - IT22602114", type: "PDF", link: "/documents/proposals/IT22602114.pdf" },
+          { name: "Middleware Framework - IT22092274", type: "PDF", link: "/documents/proposals/IT22092274_Project Proposal.pdf" },
         ],
       },
       {
@@ -68,9 +68,9 @@ const documents = [
         name: "Individual Reports",
         icon: FileText,
         subItems: [
-          { name: "Report 1", type: "PDF", link: "/documents/final/IT22114044_Final_Report.pdf" },
-          { name: "Report 2", type: "PDF", link: "/documents/final/IT22084668_final_Report.pdf" },
-          { name: "Report 3", type: "PDF", link: "/documents/final/IT22602114_Final_Report.pdf" },
+          { name: "Smart Navigation - IT22114044", type: "PDF", link: "/documents/final/IT22114044_Final_Report.pdf" },
+          { name: "IOT Firmware - IT22084668", type: "PDF", link: "/documents/final/IT22084668_final_Report.pdf" },
+          { name: "Emotion Framework - IT22602114", type: "PDF", link: "/documents/final/IT22602114_Final_Report.pdf" },
         ],
       },
       {
