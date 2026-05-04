@@ -76,7 +76,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="pt-8 text-center animate-slide-in-up" style={{ animationDelay: "300ms" }}>
           <p className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
-            © 2025 ALTRUS. All rights reserved.
+            © 2025/26 ALTRUS. All rights reserved.
           </p>
         </div>
       </div>
