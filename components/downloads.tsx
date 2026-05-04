@@ -23,7 +23,7 @@ const documents = [
         name: "Topic Assessment",
         icon: FileText,
         subItems: [
-          { name: "TAF Report", type: "PDF", link: "/documents/proposals/TAF-Report.pdf" },
+          { name: "TAF Report", type: "PDF", link: "/documents/proposals/TAF.pdf" },
         ],
       },
     ],
