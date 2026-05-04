@@ -69,7 +69,7 @@ const documents = [
         icon: FileText,
         subItems: [
           { name: "Smart Navigation - IT22114044", type: "PDF", link: "/documents/final/IT22114044_Final_Report.pdf" },
-          { name: "IOT Firmware - IT22084668", type: "PDF", link: "/documents/final/IT22084668_final_Report.pdf" },
+          { name: "IOT Firmware - IT22084668", type: "PDF", link: "/documents/final/IT22084668_final_report.pdf" },
           { name: "Emotion Framework - IT22602114", type: "PDF", link: "/documents/final/IT22602114_Final_Report.pdf" },
         ],
       },
