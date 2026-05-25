@@ -47,6 +47,8 @@ const teamMembers = [
   },
 ]
 
+const aboutGalleryImages = ["/ab1.jpeg", "/ab3.jpeg", "/ab2.jpeg"]
+
 export function AboutUs() {
   const supervisors = teamMembers.filter(m => m.role.includes("Supervisor"))
   const leader = teamMembers.filter(m => m.role === "Group Leader")
@@ -169,6 +171,24 @@ export function AboutUs() {
                 </div>
               </CardContent>
             </Card>
+          ))}
+        </div>
+
+        {/* About Gallery Row */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {aboutGalleryImages.map((image, idx) => (
+            <div
+              key={image}
+              className="group relative overflow-hidden rounded-3xl border border-primary/40 bg-card/80 p-2 shadow-xl shadow-primary/20 animate-slide-in-up"
+              style={{ animationDelay: `${idx * 120}ms` }}
+            >
+              <img
+                src={image}
+                alt={`About gallery ${idx + 1}`}
+                className="h-72 w-full rounded-2xl border border-primary/35 object-contain shadow-lg shadow-primary/15 transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
           ))}
         </div>
       </div>

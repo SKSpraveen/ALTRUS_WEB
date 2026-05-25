@@ -1,17 +1,69 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { ArrowDown, Bot, Heart, Cog, Sparkles } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { ArrowDown, Bot, Heart, ChevronLeft, ChevronRight, Cog, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  const slides = [
+    { type: "video", src: "/video.mp4", label: "Prototype Video Banner" },
+    { type: "image", src: "/1.jpeg", label: "Prototype Image One" },
+    { type: "image", src: "/2.jpeg", label: "Prototype Image Two" },
+  ] as const
+
+  const goToNextSlide = () => {
+    setActiveSlide((currentSlide) => (currentSlide + 1) % slides.length)
+  }
+
+  const goToPreviousSlide = () => {
+    setActiveSlide((currentSlide) => (currentSlide - 1 + slides.length) % slides.length)
+  }
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 1.25
     }
   }, [])
+
+  useEffect(() => {
+    const videoElement = videoRef.current
+    const currentSlide = slides[activeSlide]
+
+    if (currentSlide.type === "video") {
+      if (!videoElement) {
+        return
+      }
+
+      videoElement.currentTime = 0
+      videoElement.playbackRate = 0.85
+
+      const handleVideoEnd = () => {
+        goToNextSlide()
+      }
+
+      videoElement.addEventListener("ended", handleVideoEnd)
+      void videoElement.play()
+
+      return () => {
+        videoElement.removeEventListener("ended", handleVideoEnd)
+        videoElement.pause()
+      }
+    }
+
+    if (videoElement) {
+      videoElement.pause()
+    }
+
+    const imageSlideTimer = window.setTimeout(() => {
+      goToNextSlide()
+    }, 4500)
+
+    return () => window.clearTimeout(imageSlideTimer)
+  }, [activeSlide])
 
   const scrollToScope = () => {
     document.getElementById("scope")?.scrollIntoView({ behavior: "smooth" })
@@ -66,19 +118,66 @@ export function HeroSection() {
             <div className="mx-auto mb-12 w-full max-w-6xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
               <div className="rounded-2xl border border-primary/60 bg-secondary/40 p-2 shadow-2xl shadow-primary/20 backdrop-blur-sm">
                 <div className="relative h-[20rem] overflow-hidden rounded-xl border border-primary/50 bg-black/40 shadow-lg shadow-primary/15 sm:h-[24rem] md:h-[22rem] lg:h-[28rem]">
-                  <video
-                    ref={videoRef}
-                    className="h-full w-full rounded-xl border border-primary/50 object-contain"
-                    src="/video.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                  />
+                  <div
+                    className="flex h-full w-full transition-transform duration-700 ease-in-out"
+                    style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                  >
+                    {slides.map((slide, index) => (
+                      <div key={slide.src} className="relative h-full min-w-full">
+                        {slide.type === "video" ? (
+                          <video
+                            ref={videoRef}
+                            className="h-full w-full rounded-xl border border-primary/50 object-contain"
+                            src={slide.src}
+                            autoPlay
+                            muted
+                            playsInline
+                            preload="metadata"
+                          />
+                        ) : (
+                          <Image
+                            src={slide.src}
+                            alt={slide.label}
+                            fill
+                            className="rounded-xl border border-primary/50 object-contain"
+                            priority={index === 1}
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent px-4 py-3">
-                    <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Prototype Video Banner</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-primary/80">{slides[activeSlide].label}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={goToPreviousSlide}
+                    className="absolute left-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-primary/70 bg-gradient-to-br from-primary/25 via-background/85 to-primary/10 text-primary shadow-lg shadow-primary/30 ring-1 ring-primary/40 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary hover:shadow-xl hover:shadow-primary/40"
+                    aria-label="Previous slide"
+                  >
+                    <ChevronLeft className="h-6 w-6 drop-shadow-[0_0_8px_rgba(var(--primary-rgb),0.5)]" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goToNextSlide}
+                    className="absolute right-3 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-primary/70 bg-gradient-to-br from-primary/25 via-background/85 to-primary/10 text-primary shadow-lg shadow-primary/30 ring-1 ring-primary/40 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-primary hover:shadow-xl hover:shadow-primary/40"
+                    aria-label="Next slide"
+                  >
+                    <ChevronRight className="h-6 w-6 drop-shadow-[0_0_8px_rgba(var(--primary-rgb),0.5)]" />
+                  </button>
+                  <div className="absolute right-4 top-4 flex gap-2">
+                    {slides.map((slide, index) => (
+                      <button
+                        key={slide.src}
+                        type="button"
+                        onClick={() => setActiveSlide(index)}
+                        className={`h-2.5 rounded-full transition-all duration-300 ${
+                          activeSlide === index ? "w-8 bg-primary" : "w-2.5 bg-white/50"
+                        }`}
+                        aria-label={`Show slide ${index + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
