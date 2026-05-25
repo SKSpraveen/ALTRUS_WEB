@@ -1,10 +1,18 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import { ArrowDown, Bot, Heart, Cog, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
 export function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.25
+    }
+  }, [])
+
   const scrollToScope = () => {
     document.getElementById("scope")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -34,7 +42,7 @@ export function HeroSection() {
               backbone of intelligent assistive robots for healthcare, rehabilitation, and daily living.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-2 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border/50 text-base hover:border-primary/50 hover:bg-secondary/80 transition-all duration-300 cursor-pointer group">
                 <Sparkles className="h-4 w-4 text-primary group-hover:animate-glow-pulse" />
                 <span className="text-muted-foreground group-hover:text-primary transition-colors">Emotion-Aware Interaction</span>
@@ -53,28 +61,34 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Robot Image Section */}
-          <div className="flex justify-center mb-8">
-            <div className="relative w-80 h-80 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-              <div className="relative w-full h-full animate-float group border border-primary/30 rounded-full p-4 hover:border-primary/60 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 bg-secondary/30 backdrop-blur-sm overflow-hidden">
-                {/* Glowing background effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/0 blur-3xl rounded-full animate-pulse" />
-                <Image
-                  src="/logoo.png"
-                  alt="A.L.T.R.U.S Healthcare Robot"
-                  fill
-                  className="object-contain drop-shadow-2xl relative z-10 group-hover:drop-shadow-[0_0_30px_rgba(var(--primary-rgb),0.4)] transition-all duration-300"
-                  priority
-                />
+           
+
+            <div className="mx-auto mb-12 w-full max-w-6xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
+              <div className="rounded-2xl border border-primary/60 bg-secondary/40 p-2 shadow-2xl shadow-primary/20 backdrop-blur-sm">
+                <div className="relative h-[20rem] overflow-hidden rounded-xl border border-primary/50 bg-black/40 shadow-lg shadow-primary/15 sm:h-[24rem] md:h-[22rem] lg:h-[28rem]">
+                  <video
+                    ref={videoRef}
+                    className="h-full w-full rounded-xl border border-primary/50 object-contain"
+                    src="/video.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent px-4 py-3">
+                    <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Prototype Video Banner</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-            <p className="text-sm text-muted-foreground mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-450">
+           <p className="text-sm text-muted-foreground mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-450">
               <span className="text-primary">Primary Product:</span> Software Framework for Developers |{" "}
               <span className="text-primary">Demo:</span> A.L.T.R.U.S Robot Prototype
             </p>
-          </div>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-550">

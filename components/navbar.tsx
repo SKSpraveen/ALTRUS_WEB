@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
-import { Menu, X, Bot } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -65,7 +66,15 @@ export function Navbar() {
             onClick={() => scrollToSection("#home")}
             className="flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300 group"
           >
-            <Bot className="h-8 w-8 text-primary group-hover:animate-glow-pulse transition-all" />
+            <span className="relative h-15 w-15 sm:h-15 sm:w-15 overflow-hidden rounded-full border border-primary/30 bg-secondary/60 group-hover:border-primary/60 transition-all duration-300">
+              <Image
+                src="/logoo.png"
+                alt="A.L.T.R.U.S logo"
+                fill
+                className="object-contain p-1.5"
+                priority
+              />
+            </span>
             <span className="font-bold text-lg hidden sm:block group-hover:text-primary transition-colors duration-300">ALTRUS</span>
           </button>
 
