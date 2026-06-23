@@ -1,11 +1,15 @@
-import { Bot, Github, Linkedin, Twitter, Mail } from "lucide-react"
+"use client"
+
+import { motion } from "framer-motion"
+import { Bot, Github, Linkedin, Twitter, Mail, Heart, Rocket } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 export function Footer() {
   const quickLinks = [
     { label: "Home", href: "#home" },
-    { label: "Project Scope", href: "#scope" },
+    { label: "What We Build", href: "#scope" },
     { label: "Downloads", href: "#downloads" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Contact", href: "#contact" },
   ]
 
   const socialLinks = [
@@ -16,69 +20,88 @@ export function Footer() {
   ]
 
   return (
-    <footer className="py-16 bg-card border-t border-primary/20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
+    <footer className="py-16 bg-card border-t border-primary/20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand & Description */}
-          <div className="flex flex-col gap-4 animate-slide-in-up" style={{ animationDelay: "0ms" }}>
-            <div className="flex items-center gap-2 group">
-              <Bot className="h-6 w-6 text-primary group-hover:animate-glow-pulse transition-all" />
-              <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">ALTRUS</span>
+          <ScrollReveal direction="up">
+            <div className="flex flex-col gap-4">
+              <motion.div
+                className="flex items-center gap-2 group"
+                whileHover={{ x: 3 }}
+              >
+                <Bot className="h-6 w-6 text-primary" />
+                <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">ALTRUS</span>
+              </motion.div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                We&apos;re building the open-source operating system for assistive robotics. Four frameworks, infinite
+                possibilities — empowering developers to create robots that truly care.
+              </p>
+              <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                Built with <Heart className="h-3 w-3 text-red-500 fill-red-500" /> by the ALTRUS team
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed hover:text-foreground transition-colors duration-300">
-              Where healthcare meets robotics! ALTRUS is an adaptive life-support and therapeutic robotic unit system that empowers developers and researchers to create intelligent assistive robots for healthcare, rehabilitation, and daily living.
-            </p>
-          </div>
+          </ScrollReveal>
 
-          {/* Quick Links */}
-          <div className="flex flex-col gap-4 animate-slide-in-up" style={{ animationDelay: "100ms" }}>
-            <h3 className="font-semibold text-foreground">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
-              {quickLinks.map((link, idx) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative inline-block w-fit group link-hover"
-                  style={{ animationDelay: `${150 + idx * 50}ms` }}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Connect With Us */}
-          <div className="flex flex-col gap-4 animate-slide-in-up" style={{ animationDelay: "200ms" }}>
-            <h3 className="font-semibold text-foreground">Connect With Us</h3>
-            <div className="flex items-center gap-4">
-              {socialLinks.map((link, idx) => {
-                const Icon = link.icon
-                return (
+          <ScrollReveal direction="up" delay={0.1}>
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-foreground">Quick Links</h3>
+              <nav className="flex flex-col gap-2">
+                {quickLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="p-2 rounded-lg bg-secondary hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 animate-slide-in-up"
-                    style={{ animationDelay: `${250 + idx * 75}ms` }}
-                    aria-label={link.label}
+                    className="text-sm text-muted-foreground hover:text-primary transition-all duration-300 relative inline-block w-fit link-hover"
                   >
-                    <Icon className="h-5 w-5 transition-transform duration-300 hover:rotate-12" />
+                    {link.label}
                   </a>
-                )
-              })}
+                ))}
+              </nav>
             </div>
-          </div>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0.2}>
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-foreground">Connect With Us</h3>
+              <div className="flex items-center gap-4">
+                {socialLinks.map((link) => {
+                  const Icon = link.icon
+                  return (
+                    <motion.a
+                      key={link.label}
+                      href={link.href}
+                      className="p-2 rounded-lg bg-secondary hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300"
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      whileTap={{ scale: 0.9 }}
+                      aria-label={link.label}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </motion.a>
+                  )
+                })}
+              </div>
+              <motion.div
+                className="flex items-center gap-2 text-sm text-muted-foreground"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <Rocket className="h-4 w-4 text-primary" />
+                <span>Building the future of assistive robotics</span>
+              </motion.div>
+            </div>
+          </ScrollReveal>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-primary/20" />
 
-        {/* Copyright */}
-        <div className="pt-8 text-center animate-slide-in-up" style={{ animationDelay: "300ms" }}>
-          <p className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
-            © 2025/26 ALTRUS. All rights reserved.
-          </p>
-        </div>
+        <ScrollReveal direction="up" delay={0.3}>
+          <div className="pt-8 text-center">
+            <p className="text-sm text-muted-foreground">
+              &copy; 2025/26 ALTRUS. All rights reserved. | Made with a mission.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </footer>
   )

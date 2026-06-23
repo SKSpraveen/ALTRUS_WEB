@@ -1,19 +1,20 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Rocket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "Project Scope", href: "#scope" },
-  { name: "Milestones", href: "#milestones" },
-  { name: "Downloads", href: "#downloads" },
-  { name: "About Us", href: "#about" },
-  { name: "Achievements", href: "#achievements" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "What We Build", href: "#scope" },
+  { name: "Journey", href: "#milestones" },
+  { name: "Team", href: "#about" },
+  { name: "Partnership", href: "#collab" },
+  { name: "Impact", href: "#achievements" },
+  { name: "Contact", href: "#contact" },
 ]
 
 export function Navbar() {
@@ -25,7 +26,6 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      // Determine active section
       const sections = navLinks.map((link) => link.href.replace("#", ""))
       for (const section of sections.reverse()) {
         const element = document.getElementById(section)
@@ -55,8 +55,8 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled 
-          ? "glass-effect border-b border-primary/20 shadow-lg shadow-primary/10" 
+        isScrolled
+          ? "glass-effect border-b border-primary/20 shadow-lg shadow-primary/10"
           : "bg-transparent",
       )}
     >
@@ -66,16 +66,19 @@ export function Navbar() {
             onClick={() => scrollToSection("#home")}
             className="flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300 group"
           >
-            <span className="relative h-15 w-15 sm:h-15 sm:w-15 overflow-hidden rounded-full border border-primary/30 bg-secondary/60 group-hover:border-primary/60 transition-all duration-300">
+            <span className="relative h-10 w-10 sm:h-12 sm:w-12 overflow-hidden rounded-full border border-primary/30 bg-secondary/60 group-hover:border-primary/60 transition-all duration-300">
               <Image
                 src="/logoo.png"
-                alt="A.L.T.R.U.S logo"
+                alt="ALTRUS logo"
                 fill
                 className="object-contain p-1.5"
                 priority
               />
             </span>
-            <span className="font-bold text-lg hidden sm:block group-hover:text-primary transition-colors duration-300">ALTRUS</span>
+            <span className="font-bold text-lg hidden sm:flex items-center gap-1 group-hover:text-primary transition-colors duration-300">
+              ALTRUS
+              <Rocket className="h-3 w-3 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-1 group-hover:translate-y-0" />
+            </span>
           </button>
 
           {/* Desktop Navigation */}
@@ -93,7 +96,10 @@ export function Navbar() {
               >
                 {link.name}
                 {activeSection === link.href.replace("#", "") && (
-                  <span className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-primary/0 w-full animate-line-expand shadow-lg shadow-primary/50" />
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-primary/0 w-full shadow-lg shadow-primary/50"
+                  />
                 )}
                 <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
               </button>
@@ -112,27 +118,37 @@ export function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-primary/20 shadow-lg shadow-primary/10 animate-in fade-in slide-in-from-top-2">
-            <div className="flex flex-col gap-0 p-4 max-w-7xl mx-auto">
-              {navLinks.map((link, idx) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className={cn(
-                    "px-4 py-3 text-sm font-medium rounded-md transition-all duration-200 text-left hover:scale-105 hover:translate-x-1",
-                    activeSection === link.href.replace("#", "")
-                      ? "text-primary bg-primary/15 border-l-2 border-primary font-semibold"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
-                  )}
-                  style={{ animationDelay: `${idx * 50}ms` }}
-                >
-                  {link.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden overflow-hidden border-b border-primary/20 shadow-lg shadow-primary/10"
+            >
+              <div className="flex flex-col gap-0 p-4 max-w-7xl mx-auto bg-background/95 backdrop-blur-md">
+                {navLinks.map((link, idx) => (
+                  <motion.button
+                    key={link.name}
+                    onClick={() => scrollToSection(link.href)}
+                    className={cn(
+                      "px-4 py-3 text-sm font-medium rounded-md transition-all duration-200 text-left",
+                      activeSection === link.href.replace("#", "")
+                        ? "text-primary bg-primary/15 border-l-2 border-primary font-semibold"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
+                    )}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                  >
+                    {link.name}
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   )

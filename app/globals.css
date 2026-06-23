@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Updated theme to dark professional research portfolio style */
+/* Updated theme to dark professional research portfolio / startup style */
 :root {
   --background: oklch(0.12 0.01 250);
   --foreground: oklch(0.93 0.01 250);
@@ -12,6 +12,7 @@
   --popover: oklch(0.15 0.01 250);
   --popover-foreground: oklch(0.93 0.01 250);
   --primary: oklch(0.72 0.15 180);
+  --primary-rgb: 100, 200, 200;
   --primary-foreground: oklch(0.12 0.01 250);
   --secondary: oklch(0.2 0.01 250);
   --secondary-foreground: oklch(0.93 0.01 250);
@@ -48,6 +49,7 @@
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
+  --primary-rgb: 255, 255, 255;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -605,5 +607,22 @@
 
   .glow-line:hover::after {
     opacity: 1;
+  }
+
+  .animate-orb {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-orb-delayed {
+    animation: float 10s ease-in-out infinite 2s;
+  }
+
+  .rotate-3d-hover {
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+  }
+
+  .scroll-indicator {
+    animation: bounce-bot 2s ease-in-out infinite;
   }
 }

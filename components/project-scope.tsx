@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Target,
   Lightbulb,
@@ -17,6 +18,7 @@ import {
   Cog,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const frameworks = [
   {
@@ -327,78 +329,102 @@ export function ProjectScope() {
     <section id="scope" className="py-24 bg-card/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Project Scope</h2>
-          <p className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance">
-            Building the Future of Assistive Robotics
-          </p>
-          <p className="mx-auto max-w-3xl text-muted-foreground leading-relaxed">
-            Our research focuses on creating four independent, reusable software frameworks — modular building blocks
-            that empower developers and researchers to build smarter, more intuitive assistive robots faster.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-2 rounded-full bg-primary/15 text-primary text-sm font-semibold mb-4 border border-primary/30"
+            >
+              What We Build
+            </motion.span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance glow-text">
+              The Open-Source Stack for Assistive Robotics
+            </h2>
+            <p className="mx-auto max-w-3xl text-muted-foreground leading-relaxed">
+              We&apos;re building four independent, reusable software frameworks — modular building blocks
+              that empower developers, startups, and researchers to build smarter, more intuitive assistive robots faster.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Research Problem & Gap */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
-          <Card className="bg-destructive/5 border-destructive/20">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-destructive/10">
-                  <AlertTriangle className="h-5 w-5 text-destructive" />
-                </div>
-                <CardTitle className="text-xl text-card-foreground">{researchGap.title}</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">{researchGap.description}</p>
-              <ul className="space-y-2">
-                {researchGap.points.map((point, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="h-1.5 w-1.5 rounded-full bg-destructive mt-2 shrink-0" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          <ScrollReveal direction="left">
+            <motion.div whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 300 }}>
+              <Card className="bg-destructive/5 border-destructive/20 h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-destructive/10">
+                      <AlertTriangle className="h-5 w-5 text-destructive" />
+                    </div>
+                    <CardTitle className="text-xl text-card-foreground">{researchGap.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">{researchGap.description}</p>
+                  <ul className="space-y-2">
+                    {researchGap.points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="h-1.5 w-1.5 rounded-full bg-destructive mt-2 shrink-0" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </ScrollReveal>
 
-          <Card className="bg-primary/5 border-primary/20">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Lightbulb className="h-5 w-5 text-primary" />
-                </div>
-                <CardTitle className="text-xl text-card-foreground">{researchProblem.title}</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-xs font-semibold text-destructive uppercase tracking-wider mb-1">Problem</p>
-                  <p className="text-sm text-muted-foreground">{researchProblem.problem}</p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Our Solution</p>
-                  <p className="text-sm text-muted-foreground">{researchProblem.solution}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <ScrollReveal direction="right">
+            <motion.div whileHover={{ y: -4 }} transition={{ type: "spring", stiffness: 300 }}>
+              <Card className="bg-primary/5 border-primary/20 h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <Lightbulb className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl text-card-foreground">{researchProblem.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xs font-semibold text-destructive uppercase tracking-wider mb-1">Problem</p>
+                      <p className="text-sm text-muted-foreground">{researchProblem.problem}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Our Solution</p>
+                      <p className="text-sm text-muted-foreground">{researchProblem.solution}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </ScrollReveal>
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-            <Target className="h-5 w-5 text-primary" />
-            Research Objectives
-          </h3>
-          <div className="space-y-4">
-            {frameworks.map((framework, index) => (
-              <Card
-                key={framework.title}
-                className={`bg-card border-border transition-all duration-300 ${
-                  expandedObjective === index ? "border-primary/50" : "hover:border-primary/30"
-                }`}
-              >
+        <ScrollReveal>
+          <div className="mb-16">
+            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+              <Target className="h-5 w-5 text-primary" />
+              Our Four Frameworks
+            </h3>
+            <div className="space-y-4">
+              {frameworks.map((framework, index) => (
+                <motion.div
+                  key={framework.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card
+                    className={`bg-card border-border transition-all duration-300 ${
+                      expandedObjective === index ? "border-primary/50" : "hover:border-primary/30"
+                    }`}
+                  >
                 <CardHeader
                   className="cursor-pointer"
                   onClick={() => setExpandedObjective(expandedObjective === index ? null : index)}
@@ -453,10 +479,13 @@ export function ProjectScope() {
                   </CardContent>
                 )}
               </Card>
-            ))}
+            </motion.div>
+          ))}
           </div>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal>
         <div className="mb-16">
           <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
             <Cog className="h-5 w-5 text-primary" />
@@ -563,7 +592,9 @@ export function ProjectScope() {
             ))}
           </div>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal>
         <div className="mb-16">
           <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
@@ -636,6 +667,8 @@ export function ProjectScope() {
           </div>
         </div>
 
+        </ScrollReveal>
+        <ScrollReveal>
         {/* Target Audience */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="bg-card border-border">
@@ -686,6 +719,7 @@ export function ProjectScope() {
             </CardContent>
           </Card>
         </div>
+        </ScrollReveal>
       </div>
     </section>
   )
