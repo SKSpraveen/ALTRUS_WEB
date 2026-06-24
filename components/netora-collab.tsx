@@ -43,7 +43,7 @@ export function NetoraCollab() {
             </motion.span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
               Building the Future of{" "}
-              <span className="glow-text">Assistive Robotics</span>
+              <span className="glow-text">Intelligent Robotics</span>
             </h2>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground leading-relaxed">
               We&apos;re thrilled to announce our strategic collaboration with{" "}
@@ -57,7 +57,7 @@ export function NetoraCollab() {
                 Netora.ai
                 <ExternalLink className="h-3 w-3" />
               </motion.a>{" "}
-              — together we&apos;re building a new generation of AI-native assistive robots that redefine what&apos;s possible
+              — together we&apos;re bringing AI-native assistive robots to market, redefining what&apos;s possible
               in healthcare and daily living.
             </p>
           </div>
@@ -106,7 +106,7 @@ export function NetoraCollab() {
                 <h3 className="text-2xl font-bold text-foreground mb-2">Ready to Build the Future?</h3>
                 <p className="text-muted-foreground max-w-xl">
                   We&apos;re looking for partners, investors, and early adopters to join us on this journey.
-                  Let&apos;s create the next generation of assistive robotics together.
+                  Let&apos;s build the next generation of intelligent robotics together.
                 </p>
               </div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

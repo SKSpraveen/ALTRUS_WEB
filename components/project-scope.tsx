@@ -8,7 +8,6 @@ import {
   AlertTriangle,
   Cpu,
   Wrench,
-  BookOpen,
   Navigation,
   Heart,
   Smile,
@@ -23,65 +22,63 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 const frameworks = [
   {
     icon: Navigation,
-    title: "Adaptive Navigation Framework",
+    title: "Adaptive Navigation Suite",
     subtitle: "Voice & Gesture Command Integration",
-    novelty:
-      "Combining static and dynamic path planning with multimodal voice and gesture navigation — not as a standalone robot feature, but as a reusable, developer-friendly software framework for adaptive assistive robotics.",
-    mainObjective:
-      "To design and implement a reusable, modular software framework for adaptive, multimodal navigation in assistive robots that responds to voice commands and gestures in dynamic home environments, enabling safe, intuitive, and context-aware mobility — with configurable support for different robot types and developer-friendly configuration tools (GUI/CLI).",
-    subObjectives: [
-      "Implement Hybrid SLAM Navigation System",
-      "Voice-Command Navigation",
-      "Gesture-Based Control",
-      "Developer-Friendly Configuration & Reusability",
+    overview:
+      "A production-grade navigation framework that combines static and dynamic path planning with multimodal voice and gesture control. Drop it into any robot platform and get autonomous navigation out of the box.",
+    keyFeatures: [
+      "Hybrid SLAM for real-time localization and mapping",
+      "Natural voice command navigation",
+      "Intuitive gesture-based control",
+      "Multi-platform support with plug-and-play configuration",
+      "Available on Starter, Professional, and Enterprise plans",
     ],
+    useCases: ["Healthcare assistive robots", "Warehouse automation", "Service robotics"],
   },
   {
     icon: Heart,
-    title: "IoT Health Monitoring Framework",
+    title: "Health Monitoring Suite",
     subtitle: "Sensor Integration & Telemedicine",
-    novelty:
-      "A software framework that allows users to dynamically select sensors, automatically generate and upload firmware, and integrate analyzer models for real-time health monitoring, while being designed for easy extension to future IoT devices.",
-    mainObjective:
-      "To develop a modular software framework that enables dynamic sensor selection, automatically generates and uploads firmware to microcontrollers, and integrates ML models for real-time health monitoring, with the ability to extend to future IoT devices.",
-    subObjectives: [
-      "Dynamic Sensor Selection",
-      "Automated Firmware Generation",
-      "One-Click Firmware Deployment",
-      "Analyzer Integration",
-      "Framework Extensibility",
+    overview:
+      "A modular health monitoring framework that lets you dynamically select sensors, auto-generate firmware, and integrate ML analytics — all through a unified subscription-based platform.",
+    keyFeatures: [
+      "Dynamic sensor selection and configuration",
+      "Automated firmware generation and one-click deployment",
+      "Real-time ML-based health analytics",
+      "Extensible architecture for future IoT devices",
+      "Available on Professional and Enterprise plans",
     ],
+    useCases: ["Remote patient monitoring", "Elderly care facilities", "Telemedicine platforms"],
   },
   {
     icon: Smile,
-    title: "Emotion Detection Framework",
+    title: "Emotion Detection Suite",
     subtitle: "Empathetic Behavior Generation",
-    novelty:
-      "A reusable, real-time, multi-modal, emotion-aware interaction framework that fuses facial and voice cues, adapts over time, and enables empathetic responses in assistive robots.",
-    mainObjective:
-      "To develop a real-time, emotion-aware interaction framework for assistive robots that detects user emotions through facial expressions and voice tone, and generates empathetic responses to improve human-robot interaction.",
-    subObjectives: [
-      "Implement multi-modal emotion detection",
-      "Design fusion mechanism for facial and voice cues",
-      "Enable empathetic robot responses",
-      "Integrate real-time processing",
-      "Ensure ethical and user-friendly interaction",
+    overview:
+      "A real-time, multi-modal emotion-aware framework that fuses facial expression and voice tone analysis to generate context-appropriate empathetic responses — making robots truly human-aware.",
+    keyFeatures: [
+      "Multi-modal emotion detection (facial + voice)",
+      "Real-time fusion and analysis pipeline",
+      "Context-aware empathetic response generation",
+      "Continuous learning and adaptation",
+      "Available on Professional and Enterprise plans",
     ],
+    useCases: ["Companion robots", "Therapy and rehabilitation", "Customer service robotics"],
   },
   {
     icon: Shield,
     title: "Fault-Tolerant Middleware",
     subtitle: "Intent-Driven & Blockchain-Backed",
-    novelty:
-      "Combining three features that rarely coexist: intent-aware arbitration, proactive fault tolerance, and blockchain-backed accountability. ROS2 provides communication, but not resilience, human-intent awareness, and tamper-proof logging together.",
-    mainObjective:
-      "To design and implement a fault-tolerant, intent-driven, blockchain-backed middleware architecture for modular assistive robots, enabling secure intent interpretation, reliable fault detection & recovery, and immutable system logging — while providing developer-friendly tools for monitoring, debugging, and extensibility.",
-    subObjectives: [
-      "Intent Engine for arbitrating conflicting intents",
-      "Fault Detection & Recovery mechanisms",
-      "Blockchain-Backed Logging for immutable records",
-      "Developer CLI Tool for monitoring and debugging",
+    overview:
+      "Enterprise-grade middleware that combines intent arbitration, proactive fault tolerance, and blockchain-backed logging. Keep your robotic systems reliable, auditable, and production-ready.",
+    keyFeatures: [
+      "Intent engine for conflict resolution between commands",
+      "Automated fault detection and recovery",
+      "Immutable blockchain-backed audit logging",
+      "CLI and dashboard for real-time monitoring",
+      "Available on Professional and Enterprise plans",
     ],
+    useCases: ["Mission-critical robotics", "Healthcare automation", "Industrial robotics"],
   },
 ]
 
@@ -172,158 +169,29 @@ const methodologies = [
   },
 ]
 
-const literatureReviews = [
-  {
-    category: "Navigation & SLAM",
-    shortcomings: [
-      "Most SLAM implementations are robot-specific and not easily portable",
-      "Voice command systems lack integration with dynamic path planning",
-      "Existing frameworks don't combine gesture control with SLAM navigation",
-      "Limited developer tools for configuring navigation on different robot bases",
-    ],
-    needForNewSystem:
-      "A unified framework that combines SLAM, voice commands, and gesture control in a reusable, developer-friendly package is needed for assistive robotics.",
-    refs: [
-      {
-        text: "Thale et al. - ROS based SLAM implementation for Autonomous navigation using Turtlebot",
-        source: "ITM Web of Conferences, 2020",
-      },
-      {
-        text: "Zhang et al. - PLD-SLAM: RGB-D SLAM with Point and Line Features for Indoor Dynamic Scene",
-        source: "ISPRS International Journal of Geo-Information, 2021",
-      },
-      { text: "Macenski et al. - The Marathon 2: A Navigation System", source: "arXiv:2003.00368v2, 2020" },
-      {
-        text: "Sitaraman & Khalid - Robotics Automation and Adaptive Motion Planning",
-        source: "Journal of Trends in Computer Science, 2024",
-      },
-      {
-        text: "Fadud et al. - Open-Source Voice Command-Based Human-Computer Interaction System",
-        source: "Springer Nature Singapore, 2024",
-      },
-    ],
-  },
-  {
-    category: "Health Monitoring & IoT",
-    shortcomings: [
-      "Current wearable systems require manual firmware configuration",
-      "No automated pipeline from sensor selection to firmware deployment",
-      "ML model integration requires significant developer expertise",
-      "Limited extensibility for adding new sensor types",
-    ],
-    needForNewSystem:
-      "A modular framework that automates sensor selection, firmware generation, and ML integration while remaining extensible for future IoT devices.",
-    refs: [
-      {
-        text: "Khan - Hybrid sensor integration in wearable devices for cardiovascular health monitoring",
-        source: "ScienceDirect, 2025",
-      },
-      {
-        text: "Pinheiro - Multi-sensor wearable health device framework for real-time monitoring",
-        source: "Frontiers in Human Neuroscience, 2022",
-      },
-      { text: "Sabry - Machine learning for healthcare wearable devices", source: "Frontiers in Public Health, 2022" },
-      {
-        text: "Shajari et al. - The emergence of AI-based wearable sensors for digital health",
-        source: "Frontiers in Digital Health, 2023",
-      },
-      {
-        text: "Ghadi - Integration of wearable technology and AI in online healthcare",
-        source: "Journal of Cloud Computing, 2025",
-      },
-      { text: "Kundrick - Machine learning applied to wearable fitness tracker data", source: "ScienceDirect, 2025" },
-    ],
-  },
-  {
-    category: "Emotion Recognition",
-    shortcomings: [
-      "Facial expression systems work in isolation from voice analysis",
-      "Limited real-time multimodal fusion capabilities",
-      "Most systems don't adapt responses based on detected emotions",
-      "Poor handling of noisy real-world environments",
-    ],
-    needForNewSystem:
-      "A real-time, multimodal emotion-aware framework that fuses facial and voice cues and generates context-appropriate empathetic responses.",
-    refs: [
-      {
-        text: "Li et al. - Lightweight CNN for Real-Time Facial Expression Recognition",
-        source: "Sensors, vol. 22, 2022",
-      },
-      {
-        text: "Jiang et al. - Real-Time Facial Expression Recognition Using Residual Networks",
-        source: "Applied Sciences, vol. 13, 2023",
-      },
-      {
-        text: "Sari et al. - Facial Emotion Recognition in Social Robots for Autism Therapy",
-        source: "Multimedia Tools and Applications, 2023",
-      },
-      {
-        text: "Tzirakis et al. - End-to-End Speech Emotion Recognition Using DNNs",
-        source: "IEEE Journal of Selected Topics, 2021",
-      },
-      { text: "Li & Zhang - Context-Aware Speech Emotion Recognition", source: "Speech Communication, 2024" },
-      {
-        text: "Anwar et al. - Multimodal Emotion Recognition for Human-Robot Interaction",
-        source: "IEEE Access, 2023",
-      },
-    ],
-  },
-  {
-    category: "Blockchain & Fault Tolerance",
-    shortcomings: [
-      "ROS2 provides communication but lacks built-in fault tolerance",
-      "No unified intent arbitration system for conflicting commands",
-      "Existing logging systems are not tamper-proof or auditable",
-      "Limited developer tools for debugging middleware issues",
-    ],
-    needForNewSystem:
-      "A middleware combining intent-aware arbitration, proactive fault tolerance, and blockchain-backed immutable logging with developer-friendly CLI tools.",
-    refs: [
-      {
-        text: "Salimi et al. - Hyperledger Fabric Blockchain and ROS 2 Integration for AMRs",
-        source: "arXiv:2203.03426, 2022",
-      },
-      {
-        text: "Fu et al. - Event-driven Fabric Blockchain–ROS 2 Interface for Teleoperation",
-        source: "arXiv:2304.00781, 2023",
-      },
-      {
-        text: "Salimi et al. - Secure Heterogeneous Multi-Robot Collaboration with Blockchain",
-        source: "arXiv:2206.15242, 2022",
-      },
-      {
-        text: "Park & Hutchinson - Fault-Tolerant Rendezvous of Multirobot Systems",
-        source: "IEEE Transactions on Robotics, 2017",
-      },
-      { text: "Zhao et al. - Blockchain-Enabled Secure Event Logging in IIoT", source: "IEEE Access, 2023" },
-    ],
-  },
-]
-
-const researchGap = {
-  title: "Research Gap",
+const marketOpportunity = {
+  title: "Market Opportunity",
   description:
-    "In robotics, there is no unified, developer-friendly framework that integrates adaptive navigation, emotion-aware interaction, real-time health monitoring, and fault tolerance.",
+    "The global assistive robotics market is growing rapidly, yet there is no unified, commercially-available platform that integrates navigation, health monitoring, emotion AI, and fault tolerance under a single subscription.",
   points: [
-    "Most existing systems are hardware-specific, designed for one robot only",
-    "Fragmented modules developed in isolation",
-    "Difficult for developers to reuse or extend",
-    "No unified approach combining all essential assistive features",
+    "Robotics teams spend 60% of development time on foundational infrastructure",
+    "Existing solutions are fragmented, hardware-specific, and difficult to scale",
+    "Growing demand for affordable, intelligent assistive solutions in healthcare and elderly care",
+    "No subscription-based model exists for modular robotic software frameworks",
   ],
 }
 
-const researchProblem = {
-  title: "Research Problem & Solution",
+const problemSolution = {
+  title: "The Problem & Our Solution",
   problem:
-    "Current robotics frameworks lack integration between navigation, emotion recognition, health monitoring, and fault tolerance — forcing developers to build from scratch for each project.",
+    "Developers and healthcare providers lack access to integrated, production-ready robotic software that works across different hardware platforms — forcing costly custom builds and delayed deployments.",
   solution:
-    "We're not just building one robot — we're building four independent, modular frameworks. These are building blocks that any developer or researcher can reuse to create smarter, more intuitive assistive robots faster.",
+    "We offer four modular, subscription-based software frameworks that work out of the box. Plug and play. Scale as you grow. One platform, infinite possibilities — from prototyping to production.",
 }
 
 export function ProjectScope() {
   const [expandedObjective, setExpandedObjective] = useState<number | null>(0)
   const [expandedMethodology, setExpandedMethodology] = useState<number | null>(0)
-  const [expandedLiterature, setExpandedLiterature] = useState<number | null>(0)
 
   return (
     <section id="scope" className="py-24 bg-card/50">
@@ -337,14 +205,14 @@ export function ProjectScope() {
               viewport={{ once: true }}
               className="inline-block px-4 py-2 rounded-full bg-primary/15 text-primary text-sm font-semibold mb-4 border border-primary/30"
             >
-              What We Build
+              Our Products
             </motion.span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 text-balance glow-text">
-              The Open-Source Stack for Assistive Robotics
+              Subscription-Based Robotic Solutions
             </h2>
             <p className="mx-auto max-w-3xl text-muted-foreground leading-relaxed">
-              We&apos;re building four independent, reusable software frameworks — modular building blocks
-              that empower developers, startups, and researchers to build smarter, more intuitive assistive robots faster.
+              We offer four modular, subscription-based software frameworks — production-ready building blocks
+              that empower developers, startups, and enterprises to build intelligent assistive robots faster.
             </p>
           </div>
         </ScrollReveal>
@@ -359,13 +227,13 @@ export function ProjectScope() {
                     <div className="p-2 rounded-lg bg-destructive/10">
                       <AlertTriangle className="h-5 w-5 text-destructive" />
                     </div>
-                    <CardTitle className="text-xl text-card-foreground">{researchGap.title}</CardTitle>
+                    <CardTitle className="text-xl text-card-foreground">{marketOpportunity.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">{researchGap.description}</p>
+                  <p className="text-muted-foreground mb-4">{marketOpportunity.description}</p>
                   <ul className="space-y-2">
-                    {researchGap.points.map((point, i) => (
+                    {marketOpportunity.points.map((point, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <span className="h-1.5 w-1.5 rounded-full bg-destructive mt-2 shrink-0" />
                         {point}
@@ -385,18 +253,18 @@ export function ProjectScope() {
                     <div className="p-2 rounded-lg bg-primary/10">
                       <Lightbulb className="h-5 w-5 text-primary" />
                     </div>
-                    <CardTitle className="text-xl text-card-foreground">{researchProblem.title}</CardTitle>
+                    <CardTitle className="text-xl text-card-foreground">{problemSolution.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
                       <p className="text-xs font-semibold text-destructive uppercase tracking-wider mb-1">Problem</p>
-                      <p className="text-sm text-muted-foreground">{researchProblem.problem}</p>
+                      <p className="text-sm text-muted-foreground">{problemSolution.problem}</p>
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Our Solution</p>
-                      <p className="text-sm text-muted-foreground">{researchProblem.solution}</p>
+                      <p className="text-sm text-muted-foreground">{problemSolution.solution}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -409,7 +277,7 @@ export function ProjectScope() {
           <div className="mb-16">
             <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
               <Target className="h-5 w-5 text-primary" />
-              Our Four Frameworks
+              Our Product Suites
             </h3>
             <div className="space-y-4">
               {frameworks.map((framework, index) => (
@@ -448,33 +316,42 @@ export function ProjectScope() {
                 </CardHeader>
                 {expandedObjective === index && (
                   <CardContent className="pt-0 space-y-6">
-                    {/* Novelty */}
+                    {/* Overview */}
                     <div className="p-4 rounded-lg bg-primary/5 border border-primary/10">
-                      <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Novelty</p>
-                      <p className="text-sm text-muted-foreground italic">&quot;{framework.novelty}&quot;</p>
+                      <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Overview</p>
+                      <p className="text-sm text-muted-foreground">{framework.overview}</p>
                     </div>
 
-                    {/* Main Objective */}
+                    {/* Key Features */}
                     <div>
                       <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">
-                        Main Objective
-                      </p>
-                      <p className="text-sm text-muted-foreground">{framework.mainObjective}</p>
-                    </div>
-
-                    {/* Sub-Objectives */}
-                    <div>
-                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">
-                        Sub-Objectives
+                        Key Features
                       </p>
                       <ul className="space-y-2">
-                        {framework.subObjectives.map((obj, i) => (
+                        {framework.keyFeatures.map((feat, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <span className="h-1.5 w-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                            {obj}
+                            {feat}
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    {/* Use Cases */}
+                    <div>
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">
+                        Use Cases
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {framework.useCases.map((useCase, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
+                          >
+                            {useCase}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </CardContent>
                 )}
@@ -489,7 +366,7 @@ export function ProjectScope() {
         <div className="mb-16">
           <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
             <Cog className="h-5 w-5 text-primary" />
-            Methodology
+            Product Architecture
           </h3>
           <div className="space-y-4">
             {methodologies.map((method, index) => (
@@ -595,101 +472,27 @@ export function ProjectScope() {
         </ScrollReveal>
 
         <ScrollReveal>
-        <div className="mb-16">
-          <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" />
-            Literature Review
-          </h3>
-          <div className="space-y-4">
-            {literatureReviews.map((review, index) => (
-              <Card
-                key={review.category}
-                className={`bg-card border-border transition-all duration-300 ${
-                  expandedLiterature === index ? "border-primary/50" : "hover:border-primary/30"
-                }`}
-              >
-                <CardHeader
-                  className="cursor-pointer"
-                  onClick={() => setExpandedLiterature(expandedLiterature === index ? null : index)}
-                >
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg text-card-foreground">{review.category}</CardTitle>
-                    {expandedLiterature === index ? (
-                      <ChevronUp className="h-5 w-5 text-muted-foreground" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5 text-muted-foreground" />
-                    )}
-                  </div>
-                </CardHeader>
-                {expandedLiterature === index && (
-                  <CardContent className="pt-0 space-y-6">
-                    {/* Shortcomings */}
-                    <div className="p-4 rounded-lg bg-destructive/5 border border-destructive/10">
-                      <p className="text-xs font-semibold text-destructive uppercase tracking-wider mb-3">
-                        Existing Shortcomings
-                      </p>
-                      <ul className="space-y-2">
-                        {review.shortcomings.map((shortcoming, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="h-1.5 w-1.5 rounded-full bg-destructive mt-2 shrink-0" />
-                            {shortcoming}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Need for New System */}
-                    <div className="p-4 rounded-lg bg-primary/5 border border-primary/10">
-                      <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-2">
-                        Need for New System
-                      </p>
-                      <p className="text-sm text-muted-foreground">{review.needForNewSystem}</p>
-                    </div>
-
-                    {/* References */}
-                    <div>
-                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-3">References</p>
-                      <ul className="space-y-3">
-                        {review.refs.map((ref, i) => (
-                          <li key={i} className="text-sm">
-                            <span className="text-muted-foreground">
-                              [{i + 1}] {ref.text}
-                            </span>
-                            <span className="block text-xs text-muted-foreground/70 mt-0.5 ml-4">{ref.source}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                )}
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        </ScrollReveal>
-        <ScrollReveal>
-        {/* Target Audience */}
+        {/* Target Market */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-lg text-primary">Primary Product</CardTitle>
-              <p className="text-sm text-muted-foreground">Software Framework for Developers</p>
+              <CardTitle className="text-lg text-primary">Target Market</CardTitle>
+              <p className="text-sm text-muted-foreground">Who We Serve</p>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-3">Target Audience:</p>
+              <p className="text-sm text-muted-foreground mb-3">Our solutions are built for:</p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Robotics Startups
+                  Robotics Startups & Scale-ups
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  R&D Labs
+                  Healthcare Providers & Facilities
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Assistive Robot Manufacturers
+                  Research Labs & Academia
                 </li>
               </ul>
             </CardContent>
@@ -697,23 +500,23 @@ export function ProjectScope() {
 
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-lg text-primary">Demonstration By-Product</CardTitle>
-              <p className="text-sm text-muted-foreground">A.L.T.R.U.S Robot Prototype</p>
+              <CardTitle className="text-lg text-primary">Subscription Plans</CardTitle>
+              <p className="text-sm text-muted-foreground">Flexible Pricing for Every Stage</p>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-3">Target Users:</p>
+              <p className="text-sm text-muted-foreground mb-3">Plans available:</p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Elderly Individuals
+                  <span className="font-medium text-foreground">Starter</span> — Single framework, community support
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Disabled Users & Caregivers
+                  <span className="font-medium text-foreground">Professional</span> — Multi-framework, priority support
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Healthcare Providers
+                  <span className="font-medium text-foreground">Enterprise</span> — Full suite, dedicated support, SLA
                 </li>
               </ul>
             </CardContent>

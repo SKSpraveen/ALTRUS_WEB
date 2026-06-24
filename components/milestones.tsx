@@ -6,70 +6,58 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 
 const milestones = [
   {
-    date: "April 2025",
-    title: "Project Initiation",
-    description: "Team formation, project scope definition, and initial planning phase.",
+    date: "Q1 2025",
+    title: "Company Founded",
+    description: "ALTRUS was incorporated with a vision to democratize assistive robotics. Core team assembled and initial product roadmap defined.",
     status: "completed",
   },
   {
-    date: "May 2025",
-    title: "Topic Assessment Form (TAF) Submission",
-    description: "Formal topic evaluation and approval from academic committee.",
+    date: "Q2 2025",
+    title: "Pre-Seed Funding Secured",
+    description: "Secured pre-seed investment to accelerate early development of our four core product frameworks.",
     status: "completed",
   },
   {
-    date: "September 2025",
-    title: "Proposal Presentation",
-    description: "Initial project proposal presentation to stakeholders.",
+    date: "Q3 2025",
+    title: "MVP Launch",
+    description: "First working prototypes of the Navigation and Health Monitoring frameworks released to early testers.",
     status: "completed",
   },
   {
-    date: "January 2026",
-    title: "Progress Presentation 1",
-    description: "First major milestone presentation with technical demonstrations.",
+    date: "Q4 2025",
+    title: "First Pilot Partners",
+    description: "Onboarded first pilot partners for real-world testing of ALTRUS platforms in healthcare settings.",
     status: "completed",
   },
   {
-    date: "March 2026",
-    title: "Progress Presentation 2",
-    description: "Second milestone review with advanced feature implementations.",
+    date: "Q1 2026",
+    title: "Product v1.0 Launch",
+    description: "Official launch of all four product suites with subscription-based pricing. First revenue milestone achieved.",
     status: "completed",
   },
   {
-    date: "April 2026",
-    title: "Research Paper Submission",
-    description: "Comprehensive research documentation and academic paper submission.",
+    date: "Q2 2026",
+    title: "Strategic Partnership with Netora.ai",
+    description: "Announced strategic collaboration with Netora.ai to build AI-native assistive robots.",
+    status: "completed",
+    highlight: "Netora.ai",
+  },
+  {
+    date: "Q2 2026",
+    title: "Enterprise Beta Program",
+    description: "Launched enterprise beta program with healthcare providers and robotics companies.",
     status: "completed",
   },
   {
-    date: "April 2026",
-    title: "Research Paper Accepted",
-    description: "Our research has been accepted for presentation at ICHORA 2026",
-    status: "completed",
-    highlight: "ICHORA 2026",
-  },
-  {
-    date: "April 2026",
-    title: "Completion of Full System",
-    description: "Final system integration, testing, and optimization phase.",
+    date: "Q2 2026",
+    title: "Industry Recognition",
+    description: "Received multiple award nominations and research paper acceptance at ICHORA 2026.",
     status: "completed",
   },
   {
-    date: "April 2026",
-    title: "Research Portfolio Website Launch",
-    description: "Launch of the research portfolio website showcasing project outcomes.",
-    status: "completed",
-  },
-  {
-    date: "May 2026",
-    title: "Further Improvements & GenAI Integration",
-    description: "Enhancements based on feedback and integration of Generative AI features.",
-    status: "completed",
-  },
-  {
-    date: "May 2026",
-    title: "Final Presentation",
-    description: "Final research presentation to stakeholders and academic committee.",
+    date: "Q3 2026",
+    title: "Growth & Expansion",
+    description: "Scaling customer base, expanding product capabilities, and growing the team.",
     status: "in-progress",
   },
 ]
@@ -92,7 +80,7 @@ export function Milestones() {
             </motion.span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 glow-text">From Idea to Impact</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-              From a university project to a startup — here&apos;s our journey of building the future of assistive robotics.
+              From an idea to a growing company — here&apos;s our journey of building intelligent robotic solutions.
             </p>
           </div>
         </ScrollReveal>
@@ -199,7 +187,7 @@ export function Milestones() {
               This is just the beginning. The best is yet to come.
             </p>
             <p className="text-muted-foreground mt-2">
-              From academic research to startup — we&apos;re committed to making assistive robotics accessible to all.
+              From a bold idea to a growing business — we&apos;re committed to making intelligent robotics accessible to all.
             </p>
           </motion.div>
         </ScrollReveal>

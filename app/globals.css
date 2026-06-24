@@ -492,7 +492,7 @@
   }
 
   .glow-text {
-    background: linear-gradient(135deg, var(--primary), var(--primary) / 0.7);
+    background: linear-gradient(135deg, var(--primary), color-mix(in oklch, var(--primary) 70%, transparent));
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

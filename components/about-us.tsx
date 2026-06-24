@@ -9,16 +9,16 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 const teamMembers = [
   {
     name: "Ms. Hansi De Silva",
-    role: "Supervisor",
-    bio: "Project supervisor providing expert guidance and oversight for the ALTRUS robotic system development.",
+    role: "Advisor",
+    bio: "Provides strategic guidance and technical oversight for ALTRUS's product development and research direction.",
     image: "/hansi.jpg",
     email: "hansi.d@sliit.lk",
     linkedin: "https://lk.linkedin.com/in/hansi-de-silva-03629b79",
   },
   {
     name: "Mr. Ashvinda Iddamalgoda",
-    role: "Co-Supervisor",
-    bio: "Co-supervisor contributing specialized knowledge in robotics and system engineering.",
+    role: "Advisor",
+    bio: "Advises on robotics architecture, system engineering, and go-to-market technical strategy.",
     image: "/ashvinda.jpeg",
     email: "ashvinda.i@sliit.lk",
     linkedin: "https://lk.linkedin.com/in/ashvinda",
@@ -26,7 +26,7 @@ const teamMembers = [
   {
     name: "Praveen S.K.S",
     role: "Founder & CEO",
-    bio: "Leading the startup in designing and implementing therapeutic robotic functionalities while overseeing hardware integration and robust system architecture development for adaptive life-support solutions.",
+    bio: "Leading the company's vision and strategy, overseeing product development, business growth, and strategic partnerships.",
     image: "/ss.png",
     email: "sasindupraveen705@gmail.com",
     linkedin: "http://linkedin.com/in/SKSpraveen",
@@ -34,7 +34,7 @@ const teamMembers = [
   {
     name: "S.N.S.B.K.K. Semasinghe",
     role: "Co-Founder & CTO",
-    bio: "Focused on hardware integration, robotic system architecture, and leading technical strategy for the ALTRUS platform.",
+    bio: "Drives technical strategy, hardware integration, and product architecture for the ALTRUS platform and subscription frameworks.",
     image: "/kk.jpg",
     email: "kushankasemasinghe2002@gmail.com",
     linkedin: "linkdin.com/kushankasemasinghe",
@@ -42,7 +42,7 @@ const teamMembers = [
   {
     name: "Madushanka L.A.S",
     role: "Co-Founder & Lead Engineer",
-    bio: "Contributing to the design and implementation of therapeutic robotic functionalities and system integration.",
+    bio: "Leads engineering execution, system integration, and delivery of ALTRUS's core product frameworks to customers.",
     image: "/supun.jpg",
     email: "Supunmadushanka2582000@gmail.com",
     linkedin: "linkdin.com/supunmadushan",
@@ -52,8 +52,8 @@ const teamMembers = [
 const aboutGalleryImages = ["/ab1.jpeg", "/ab3.jpeg", "/ab2.jpeg"]
 
 export function AboutUs() {
-  const supervisors = teamMembers.filter(m => m.role.includes("Supervisor"))
-  const founders = teamMembers.filter(m => !m.role.includes("Supervisor"))
+  const supervisors = teamMembers.filter(m => m.role.includes("Advisor"))
+  const founders = teamMembers.filter(m => !m.role.includes("Advisor"))
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -92,8 +92,8 @@ export function AboutUs() {
               Meet the Team Behind ALTRUS
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-              We&apos;re a passionate team of engineers, researchers, and dreamers on a mission to make assistive
-              robotics accessible to everyone. From university lab to startup — this is our story.
+              We&apos;re a passionate team of engineers, entrepreneurs, and innovators on a mission to make assistive
+              robotics accessible to everyone. From a bold idea to a growing company — this is our story.
             </p>
           </div>
         </ScrollReveal>
@@ -110,8 +110,8 @@ export function AboutUs() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">Our Mission</h3>
               <p className="text-muted-foreground leading-relaxed">
-                To democratize assistive robotics by building open-source, modular software frameworks that empower
-                any developer, startup, or researcher to create intelligent, empathetic robots.
+        To democratize assistive robotics by building subscription-based, modular software frameworks that empower
+          developers, startups, and enterprises to create intelligent, empathetic robots.
               </p>
             </motion.div>
           </ScrollReveal>

@@ -143,8 +143,8 @@ export function ContactUs() {
             </motion.span>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 glow-text">Get In Touch</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground leading-relaxed">
-              Want to collaborate, invest, or just say hi? We&apos;d love to hear from you. Let&apos;s build the future of
-              assistive robotics together.
+               Want to collaborate, invest, or just say hi? We&apos;d love to hear from you. Let&apos;s build the future of
+              intelligent robotics together.
             </p>
           </div>
         </ScrollReveal>

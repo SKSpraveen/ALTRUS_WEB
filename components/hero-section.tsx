@@ -134,7 +134,7 @@ export function HeroSection() {
               transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
             >
               <Zap className="h-3.5 w-3.5 inline mr-1" />
-              Startup Building the Future of Assistive Robotics
+              Startup Building the Future of Intelligent Robotics
             </motion.span>
 
             <motion.h1
@@ -147,9 +147,9 @@ export function HeroSection() {
             <motion.p className="text-xl sm:text-2xl md:text-3xl font-medium text-primary mb-2" variants={itemVariants}>
               <Typewriter
                 texts={[
-                  "We Build Robot Brains.",
-                  "Adaptive Life-support & Therapeutic Robotic Unit System.",
-                  "Four Frameworks. Infinite Possibilities.",
+                  "Empowering a Smarter Future.",
+                  "Adaptive Life-support Therapeutic Robotic Unit System.",
+                  "Intelligent Hardware. Powerful Software.",
                 ]}
                 period={2500}
               />
@@ -160,8 +160,8 @@ export function HeroSection() {
               variants={itemVariants}
             >
               We&apos;re a deep-tech startup building{" "}
-              <span className="text-primary font-semibold">four open-source software frameworks</span> that power the
-              next generation of intelligent assistive robots. Think Baymax meets Wall-E — powered by real AI.
+              <span className="text-primary font-semibold">subscription-based robotic software frameworks</span> and
+              intelligent hardware solutions that power the next generation of autonomous assistive systems.
             </motion.p>
           </motion.div>
 
@@ -170,10 +170,10 @@ export function HeroSection() {
             variants={itemVariants}
           >
             {[
-              { icon: Sparkles, label: "Emotion-Aware AI" },
-              { icon: Cog, label: "Autonomous Navigation" },
-              { icon: Heart, label: "Health Monitoring" },
-              { icon: Bot, label: "Fault-Tolerant Middleware" },
+              { icon: Sparkles, label: "Subscription-Based" },
+              { icon: Cog, label: "Enterprise-Grade" },
+              { icon: Heart, label: "Production-Ready" },
+              { icon: Bot, label: "End-to-End Support" },
             ].map((item, idx) => (
               <motion.div
                 key={item.label}
@@ -283,7 +283,7 @@ export function HeroSection() {
             variants={itemVariants}
           >
             <Rocket className="h-4 w-4 inline mr-1 text-primary" />
-            <span className="text-primary font-semibold">Product:</span> Open-Source Software Frameworks |{" "}
+            <span className="text-primary font-semibold">Product:</span> Subscription-Based Software Frameworks |{" "}
             <span className="text-primary font-semibold">Demo:</span> ALTRUS Robot Prototype
           </motion.p>
 
@@ -294,7 +294,7 @@ export function HeroSection() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
                 onClick={scrollToScope}
               >
-                See What We Build
+                See Our Products
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.95 }}>
@@ -304,7 +304,7 @@ export function HeroSection() {
                 className="border-primary/40 hover:bg-primary/20 bg-transparent hover:border-primary/80 text-foreground hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                 onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Let&apos;s Collaborate
+                Let&apos;s Talk
               </Button>
             </motion.div>
           </motion.div>

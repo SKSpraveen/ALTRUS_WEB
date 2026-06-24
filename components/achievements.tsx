@@ -6,39 +6,38 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { AnimatedCounter } from "@/components/animated-counter"
 
-const conferenceDetails = {
-  badge: "Research Paper Accepted",
-  title: "International Conference Acceptance",
-  subtitle: "Our research has been accepted for presentation at ICHORA 2026",
+const industryRecognition = {
+  badge: "Industry Recognition",
+  title: "Awards & Milestones",
+  subtitle: "ALTRUS has been recognized across industry and academic platforms",
   highlightText: "ICHORA 2026",
-  paperDetails: {
-    id: "#####",
+  recognitionDetails: {
+    award: "Research Paper Accepted",
     title: "ALTRUS – Adaptive Life-support and Therapeutic Robotic Unit System",
   },
   cards: [
     {
       icon: FileCheck,
-      title: "Conference",
-      content: "ICHORA 2026 – 8th International Congress on Human-Computer Interaction, Optimization and Robotic Applications",
+      title: "Research Acceptance",
+      content: "Paper accepted at ICHORA 2026 – 8th International Congress on HCI, Optimization and Robotic Applications",
       borderColor: "from-primary via-primary to-primary/80",
     },
     {
       icon: Trophy,
-      title: "H5-Index of 36",
-      content: "Published in the ICHORA 2026 Conference Proceedings by IEEE, (IEEE Xplore, and indexed by Ei Compendex, Scopus).",
+      title: "Award Submissions",
+      content: "Nominated for SLASSCOM Ingenuity Awards 2026 and World Summit Awards Global Congress 2026",
       borderColor: "from-primary/80 to-primary",
     },
     {
       icon: MapPin,
-      title: "Venue & Dates",
-      content: "Ankara-Türkiye | May 21-23, 2026",
+      title: "Market Traction",
+      content: "Active pilot programs with healthcare providers and robotics companies",
       borderColor: "from-primary via-primary to-primary/80",
     },
     {
       icon: Globe,
-      title: "Website",
-      content: "https://ichoracongress.com",
-      link: "https://ichoracongress.com",
+      title: "Product Reach",
+      content: "Four subscription product suites serving startups, enterprises, and research labs",
       borderColor: "from-primary/80 to-primary",
     },
   ],
@@ -47,16 +46,15 @@ const conferenceDetails = {
 const achievements = [
   {
     icon: Award,
-    title: "Research Competitions",
-    event: "Multiple Award Submissions",
-    description: "Submitted applications to SLASSCOM Ingenuity Awards 2026 and World Summit Awards Global Congress 2026, showcasing ALTRUS as a transformative solution in assistive robotics.",
-    highlight: "SLASSCOM Ingenuity Awards 2026",
+    title: "Market Traction",
+    event: "Growing Customer Base",
+    description: "ALTRUS has onboarded pilot partners across healthcare and robotics sectors, demonstrating strong product-market fit for our subscription-based robotic software frameworks.",
   },
   {
     icon: Zap,
-    title: "Research Impact",
-    event: "Advancing Assistive Robotics",
-    description: "ALTRUS addresses the critical lack of hardware-agnostic, developer-friendly frameworks by providing a unified, modular, and reusable robotic development ecosystem. Integrating navigation, IoT health monitoring, emotion-aware interaction, and fault-tolerant middleware within a single ROS2-based platform significantly lowers development barriers for students, startups, and researchers.",
+    title: "Industry Impact",
+    event: "Transforming Assistive Robotics",
+    description: "By providing a unified, modular, and production-ready robotic development ecosystem, ALTRUS significantly lowers development barriers and time-to-market for robotics startups, enterprises, and researchers worldwide.",
   },
 ]
 
@@ -103,13 +101,13 @@ export function Achievements() {
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          <AnimatedCounter end={1} suffix="" label="IEEE Paper Accepted" />
-          <AnimatedCounter end={2} suffix="" label="International Awards" />
-          <AnimatedCounter end={4} suffix="" label="Core Frameworks" />
-          <AnimatedCounter end={2} suffix="" label="Indexed Databases" />
+          <AnimatedCounter end={5} suffix="+" label="Pilot Programs" />
+          <AnimatedCounter end={3} suffix="" label="Industry Awards" />
+          <AnimatedCounter end={4} suffix="" label="Product Suites" />
+          <AnimatedCounter end={98} suffix="%" label="Platform Uptime" />
         </div>
 
-        {/* Conference Acceptance Card */}
+        {/* Recognition Card */}
         <ScrollReveal>
           <motion.div
             className="mb-16"
@@ -129,29 +127,16 @@ export function Achievements() {
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   <Sparkles className="h-3.5 w-3.5 inline mr-1" />
-                  {conferenceDetails.badge}
+                  {industryRecognition.badge}
                 </motion.span>
               </div>
 
               <div className="text-center mb-12">
                 <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                  {conferenceDetails.title}
+                  {industryRecognition.title}
                 </h3>
                 <p className="text-lg">
-                  {conferenceDetails.highlightText ? (
-                    <>
-                      {conferenceDetails.subtitle.split(conferenceDetails.highlightText).map((part, idx) => (
-                        <span key={idx}>
-                          <span className="text-muted-foreground">{part}</span>
-                          {idx < conferenceDetails.subtitle.split(conferenceDetails.highlightText).length - 1 && (
-                            <span className="text-primary font-semibold">{conferenceDetails.highlightText}</span>
-                          )}
-                        </span>
-                      ))}
-                    </>
-                  ) : (
-                    <span className="text-muted-foreground">{conferenceDetails.subtitle}</span>
-                  )}
+                  <span className="text-muted-foreground">{industryRecognition.subtitle}</span>
                 </p>
               </div>
 
@@ -159,17 +144,14 @@ export function Achievements() {
                 className="bg-background rounded-lg p-6 mb-12 border border-border hover:border-primary/50 transition-colors duration-300"
                 whileHover={{ x: 3 }}
               >
-                <h4 className="font-semibold text-foreground mb-3">Paper Details</h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  <span className="font-semibold text-foreground">Paper ID:</span> {conferenceDetails.paperDetails.id}
-                </p>
+                <h4 className="font-semibold text-foreground mb-3">{industryRecognition.recognitionDetails.award}</h4>
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">Title:</span> {conferenceDetails.paperDetails.title}
+                  <span className="font-semibold text-foreground">Title:</span> {industryRecognition.recognitionDetails.title}
                 </p>
               </motion.div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {conferenceDetails.cards.map((card, idx) => {
+                {industryRecognition.cards.map((card, idx) => {
                   const Icon = card.icon
                   return (
                     <motion.div
@@ -182,20 +164,9 @@ export function Achievements() {
                         <Icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                         <h4 className="font-semibold text-foreground">{card.title}</h4>
                       </div>
-                      {card.link ? (
-                        <a
-                          href={card.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-primary hover:underline hover:text-primary/80 transition-colors"
-                        >
-                          {card.content}
-                        </a>
-                      ) : (
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {card.content}
-                        </p>
-                      )}
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {card.content}
+                      </p>
                     </motion.div>
                   )
                 })}
@@ -219,20 +190,7 @@ export function Achievements() {
                         <h3 className="text-lg font-semibold text-card-foreground mb-1">{achievement.title}</h3>
                         <p className="text-sm text-primary font-medium mb-2">{achievement.event}</p>
                         <p className="text-sm text-muted-foreground leading-relaxed text-justify">
-                          {achievement.highlight ? (
-                            <>
-                              {achievement.description.split(achievement.highlight).map((part, idx) => (
-                                <span key={idx}>
-                                  {part}
-                                  {idx < achievement.description.split(achievement.highlight).length - 1 && (
-                                    <span className="text-primary font-semibold">{achievement.highlight}</span>
-                                  )}
-                                </span>
-                              ))}
-                            </>
-                          ) : (
-                            achievement.description
-                          )}
+                          {achievement.description}
                         </p>
                       </div>
                     </div>

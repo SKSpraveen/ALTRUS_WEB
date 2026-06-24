@@ -7,8 +7,7 @@ import { ScrollReveal } from "@/components/scroll-reveal"
 export function Footer() {
   const quickLinks = [
     { label: "Home", href: "#home" },
-    { label: "What We Build", href: "#scope" },
-    { label: "Downloads", href: "#downloads" },
+    { label: "Products", href: "#scope" },
     { label: "Contact", href: "#contact" },
   ]
 
@@ -35,7 +34,7 @@ export function Footer() {
                 <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">ALTRUS</span>
               </motion.div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                We&apos;re building the open-source operating system for assistive robotics. Four frameworks, infinite
+                We&apos;re building subscription-based robotic software frameworks and intelligent hardware solutions. Four product suites, infinite
                 possibilities — empowering developers to create robots that truly care.
               </p>
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
@@ -87,7 +86,7 @@ export function Footer() {
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <Rocket className="h-4 w-4 text-primary" />
-                <span>Building the future of assistive robotics</span>
+                <span>Building the future of intelligent robotics</span>
               </motion.div>
             </div>
           </ScrollReveal>
@@ -98,7 +97,7 @@ export function Footer() {
         <ScrollReveal direction="up" delay={0.3}>
           <div className="pt-8 text-center">
             <p className="text-sm text-muted-foreground">
-              &copy; 2025/26 ALTRUS. All rights reserved. | Made with a mission.
+              &copy; 2025/26 ALTRUS. All rights reserved. | Built with purpose.
             </p>
           </div>
         </ScrollReveal>
